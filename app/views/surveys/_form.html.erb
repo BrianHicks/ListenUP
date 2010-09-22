@@ -1,31 +1,12 @@
-<%= form_for @survey do |f| %>
+<% form_for @survey do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :intro %><br />
-    <%= f.text_field :intro %>
-  </p>
-  <p>
-    <%= f.label :thank_you %><br />
-    <%= f.text_field :thank_you %>
-  </p>
-  <p>
-    <%= f.label :pub_date %><br />
-    <%= f.datetime_select :pub_date %>
-  </p>
-  <p>
-    <%= f.label :end_date %><br />
-    <%= f.datetime_select :end_date %>
-  </p>
-  <p>
-    <%= f.label :pub_id %><br />
-    <%= f.text_field :pub_id %> 
-  </p>
-    <% f.fields_for :questions do |builder|%>
-      <%= render "question_fields", :f => builder %>
-    <% end %>
-  <p><%= f.submit %></p>
+  <% f.fields_for :questions do |builder| %>
+    <%= render "question_fields", :f => builder %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Question", f, :questions %></p>
+  <p><%= f.submit "Submit" %></p>
 <% end %>
