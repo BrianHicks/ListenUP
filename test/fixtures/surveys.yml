@@ -1,0 +1,15 @@
+one:
+  name: MyString
+  intro: MyString
+  thank_you: MyString
+  pub_date: 2010-09-22 00:26:53
+  end_date: 2010-09-22 00:26:53
+  pub_id: MyString
+
+two:
+  name: MyString
+  intro: MyString
+  thank_you: MyString
+  pub_date: 2010-09-22 00:26:53
+  end_date: 2010-09-22 00:26:53
+  pub_id: MyString

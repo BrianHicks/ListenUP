@@ -1,0 +1,32 @@
+<% title "Survey" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @survey.name %>
+</p>
+<p>
+  <strong>Intro:</strong>
+  <%= @survey.intro %>
+</p>
+<p>
+  <strong>Thank You:</strong>
+  <%= @survey.thank_you %>
+</p>
+<p>
+  <strong>Pub Date:</strong>
+  <%= @survey.pub_date %>
+</p>
+<p>
+  <strong>End Date:</strong>
+  <%= @survey.end_date %>
+</p>
+<p>
+  <strong>Pub:</strong>
+  <%= @survey.pub_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_survey_path(@survey) %> |
+  <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", surveys_path %>
+</p>
