@@ -22,7 +22,10 @@
   </p>
   <p>
     <%= f.label :pub_id %><br />
-    <%= f.text_field :pub_id %>
+    <%= f.text_field :pub_id %> 
   </p>
+    <% f.fields_for :questions do |builder|%>
+      <%= render "question_fields", :f => builder %>
+    <% end %>
   <p><%= f.submit %></p>
 <% end %>

@@ -3,7 +3,7 @@
   <head>
     <title><%= yield(:title) || "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :defaults, :cache => true %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -15,5 +15,8 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+    <% if Rails.env.development? %>
+      <%= debug(params) %>
+    <% end %>
   </body>
 </html>

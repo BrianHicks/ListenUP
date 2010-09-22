@@ -1,0 +1,10 @@
+<div class="fields">
+  <p>
+    <%= f.label :content, "Question" %>
+    <%= link_to_remove_fields "remove", f %><br />
+    <%= f.text_area :content, :rows => 3 %>
+    <% f.fields_for :answers do |builder| %>
+  </p>
+  <%= render "answer_fields", :f => builder %>
+  <% end %>
+</div>

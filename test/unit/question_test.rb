@@ -6,3 +6,17 @@ class QuestionTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: questions
+#
+#  id            :integer         not null, primary key
+#  survey_id     :integer
+#  content       :text
+#  response_type :text
+#  order         :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

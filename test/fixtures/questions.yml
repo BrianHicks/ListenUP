@@ -11,3 +11,17 @@ two:
   content: MyText
   response_type: MyText
   order: 1
+
+# == Schema Information
+#
+# Table name: questions
+#
+#  id            :integer         not null, primary key
+#  survey_id     :integer
+#  content       :text
+#  response_type :text
+#  order         :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
