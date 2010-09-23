@@ -3,8 +3,8 @@
     = f.input :name, :label => 'Name'
     = f.input :intro, :label => 'Intro'
     = f.input :thank_you, :label => 'Thank you'
-    = f.input :pub_date, :label => 'Pub date'
-    = f.input :end_date, :label => 'End date'
+    = f.input :pub_date, :label => 'Pub date', :as => :date
+    = f.input :end_date, :label => 'End date', :as => :date
   
   - f.inputs :for => :questions do |question|
     = render "question_fields", :f => question
