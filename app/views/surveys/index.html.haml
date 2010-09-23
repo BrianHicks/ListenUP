@@ -1,0 +1,23 @@
+- title "Surveys"
+
+%table
+  %tr
+    %th Name
+    %th Intro
+    %th Thank You
+    %th Publication Date
+    %th End Date
+    %th Public Identifier
+  - for survey in @surveys
+    %tr
+      %td= survey.name
+      %td= survey.intro
+      %td= survey.thank_you
+      %td= survey.pub_date
+      %td= survey.end_date
+      %td= survey.pub_id
+      %td= link_to "Show", survey
+      %td= link_to "Edit", edit_survey_path(survey)
+      %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Survey", new_survey_path
