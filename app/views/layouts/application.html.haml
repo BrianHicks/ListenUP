@@ -9,11 +9,14 @@
     #container
       #header
         #user_actions
-          sign in
-          sign up
-          sign out
-          view profile
-          edit profile
+          - if user_signed_in?
+            = link_to "Sign out", destroy_user_session_path
+            view profile
+            = link_to "Edit profile", edit_user_registration_path
+          - else
+            = link_to "Sign in", new_user_session_path
+            or
+            = link_to "sign up", new_user_registration_path
       #content
         - flash.each do |name, msg|
           %div{ :id => "flash_#{name}" }= msg
