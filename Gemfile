@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'nifty-generators'
 gem 'haml'
 gem 'formtastic'
+gem 'devise'
 
 group :development do
   gem 'annotate'
