@@ -7,8 +7,17 @@
     = yield(:head)
   %body
     #container
-      - flash.each do |name, msg|
-        %div{ :id => "flash_#{name}" }= msg
-      %h1= yield(:title) if show_title?
-      = yield
-    = debug(params) if Rails.env.development?
+      #header
+        #user_actions
+          sign in
+          sign up
+          sign out
+          view profile
+          edit profile
+      #content
+        - flash.each do |name, msg|
+          %div{ :id => "flash_#{name}" }= msg
+        %h1= yield(:title) if show_title?
+        = yield
+      #footer
+        = debug(params) if Rails.env.development?
