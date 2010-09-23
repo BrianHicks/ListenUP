@@ -1,11 +1,10 @@
 SPScaffold::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/help"
+  root :to => "pages#home"
 
-  get "pages/about"
-
-  get "pages/contact"
+  match "help" => "pages#help"
+  match "about" => "pages#about"
+  match "contact" => "pages#contact"
 
   resources :surveys
 
