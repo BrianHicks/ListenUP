@@ -11,8 +11,9 @@
         #user_actions
           - if user_signed_in?
             = link_to "Sign out", destroy_user_session_path
-            view profile
+            = link_to "View profile", user_path(current_user)
             = link_to "Edit profile", edit_user_registration_path
+            = link_to "Your surveys", "#"
           - else
             = link_to "Sign in", new_user_session_path
             or
