@@ -1,13 +1,17 @@
 %h1 Listing users
 %table
   %tr
-    %th
-    %th
-    %th
+    %th Name
+    %th Email
+    %th Last Sign In
+    %th Admin
   - @users.each do |user|
     %tr
+      %td= user.full_name
+      %td= user.email
+      %td= user.last_sign_in_at
+      %td= user.is_admin?
       %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Edit', edit_user_registration_path(user)
 %br/
 = link_to 'New User', new_user_path
