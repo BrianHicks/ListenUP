@@ -1,10 +1,12 @@
-- form_for @survey do |f|
-  = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  - f.fields_for :questions do |builder|
-    = render "question_fields", :f => builder
+- semantic_form_for @survey do |f|
+  - f.inputs do
+    = f.input :name, :label => 'Name'
+    = f.input :intro, :label => 'Intro'
+    = f.input :thank_you, :label => 'Thank you'
+    = f.input :pub_date, :label => 'Pub date'
+    = f.input :end_date, :label => 'End date'
+  
+  - f.inputs :for => :questions do |question|
+    = render "question_fields", :f => question
   %p= link_to_add_fields "Add Question", f, :questions
   %p= f.submit "Submit"
