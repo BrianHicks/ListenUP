@@ -1,0 +1,34 @@
+- title "Survey"
+
+%p
+  %strong Name:
+  = @survey.name
+%p
+  %strong Intro:
+  = @survey.intro
+%p
+  %strong Thank You:
+  = @survey.thank_you
+%p
+  %strong Publication Date:
+  = @survey.pub_date
+%p
+  %strong End Date:
+  = @survey.end_date
+%p
+  %strong Public ID:
+  = @survey.pub_id
+
+%ol
+  - for question in @survey.questions
+    %li
+      = question.content
+      %ul
+        - for answer in question.answers
+          %li= answer.content
+%p
+  = link_to "Edit", edit_survey_path(@survey)
+  |
+  = link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", surveys_path
