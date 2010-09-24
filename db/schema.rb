@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924053426) do
+ActiveRecord::Schema.define(:version => 20100924061443) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(:version => 20100924053426) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "recipients", :force => true do |t|
+    t.text     "email"
+    t.boolean  "no_email",   :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipients_surveys", :id => false, :force => true do |t|
+    t.integer "recipient_id"
+    t.integer "survey_id"
+  end
+
+  add_index "recipients_surveys", ["recipient_id"], :name => "index_recipients_surveys_on_recipient_id"
+  add_index "recipients_surveys", ["survey_id"], :name => "index_recipients_surveys_on_survey_id"
 
   create_table "surveys", :force => true do |t|
     t.string   "name"
