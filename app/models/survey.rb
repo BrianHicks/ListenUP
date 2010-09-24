@@ -2,6 +2,8 @@ class Survey < ActiveRecord::Base
   #attr_accessible :name, :intro, :thank_you, :pub_date, :end_date, :pub_id
   
   has_many :questions, :dependent => :destroy
+  
+  has_and_belongs_to_many :users, :as => :editors
 
   accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? },
                                             :allow_destroy => true
