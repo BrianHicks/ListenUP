@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924024720) do
+ActiveRecord::Schema.define(:version => 20100924030701) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -66,5 +66,8 @@ ActiveRecord::Schema.define(:version => 20100924024720) do
     t.integer "user_id"
     t.integer "survey_id"
   end
+
+  add_index "users_surveys", ["survey_id"], :name => "index_users_surveys_on_survey_id"
+  add_index "users_surveys", ["user_id"], :name => "index_users_surveys_on_user_id"
 
 end
