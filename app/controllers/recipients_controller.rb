@@ -1,4 +1,5 @@
 class RecipientsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:index, :new, :create, :destroy]
   def index
     @recipients = Recipient.all
   end
@@ -13,6 +14,7 @@ class RecipientsController < ApplicationController
   
   def create
     @recipient = Recipient.new(params[:recipient])
+    @recipient.secret_key = @recipient.generate_secret
     if @recipient.save
       flash[:notice] = "Successfully created recipient."
       redirect_to @recipient
@@ -23,10 +25,16 @@ class RecipientsController < ApplicationController
   
   def edit
     @recipient = Recipient.find(params[:id])
+    if @recipient.secret_key == params[:secret_key]
+      redirect_to root_path
+    end
   end
   
   def update
     @recipient = Recipient.find(params[:id])
+    if @recipient.secret_key == params[:secret_key]
+      redirect_to root_path and return
+    end
     if @recipient.update_attributes(params[:recipient])
       flash[:notice] = "Successfully updated recipient."
       redirect_to @recipient
