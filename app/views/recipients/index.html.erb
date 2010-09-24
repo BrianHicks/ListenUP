@@ -1,0 +1,19 @@
+<% title "Recipients" %>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>No Email</th>
+  </tr>
+  <% for recipient in @recipients %>
+    <tr>
+      <td><%= recipient.email %></td>
+      <td><%= recipient.no_email %></td>
+      <td><%= link_to "Show", recipient %></td>
+      <td><%= link_to "Edit", edit_recipient_path(recipient) %></td>
+      <td><%= link_to "Destroy", recipient, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Recipient", new_recipient_path %></p>

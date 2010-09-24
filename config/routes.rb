@@ -1,5 +1,7 @@
 SPScaffold::Application.routes.draw do
 
+  resources :recipients
+
   devise_for :users
 
   root :to => "pages#home"

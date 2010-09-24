@@ -1,0 +1,7 @@
+one:
+  email: MyText
+  no_email: false
+
+two:
+  email: MyText
+  no_email: false
