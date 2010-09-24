@@ -1,0 +1,12 @@
+!!! html
+%html
+  %body
+    %h1= %w(Huzzah! Hurray! Wheee! Whoop-de-do!).sample
+    %p
+      You've been invited to take a survey by #{@user.full_name}.
+    %p
+      To accept, just click this link:
+      = link_to survey_path(survey)
+    %p
+      And then go out and have an awesome day!
+      
