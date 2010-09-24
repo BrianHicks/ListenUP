@@ -12,9 +12,14 @@ class Survey < ActiveRecord::Base
     user == owner
   end
   
+  def can_be_edited_by?(user)
+    editors.contains?(user)
+  end
+  
   def owner
     User.find(owner_id)
   end
+  
 end
 
 # == Schema Information

@@ -1,4 +1,6 @@
 class SurveysController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show]
+
   def index
     @surveys = current_user.surveys
   end
@@ -11,12 +13,13 @@ class SurveysController < ApplicationController
     @survey = Survey.new
     3.times do
       question = @survey.questions.build
-      4.times { question.answers.build }
+      3.times { question.answers.build }
     end
   end
   
   def create
     @survey = Survey.new(params[:survey])
+    @survey.owner_id = current_user.id
     if @survey.save
       flash[:notice] = "Successfully created survey."
       redirect_to @survey
@@ -27,6 +30,10 @@ class SurveysController < ApplicationController
   
   def edit
     @survey = Survey.find(params[:id])
+    if !@survey.can_be_edited_by? current_user
+      flash[:error] = "You don't have permission to edit this survey."
+      redirect_to surveys_url
+    end
   end
   
   def update
@@ -41,8 +48,12 @@ class SurveysController < ApplicationController
   
   def destroy
     @survey = Survey.find(params[:id])
-    @survey.destroy
-    flash[:notice] = "Successfully destroyed survey."
+    if @survey.is_owner?(current_user)
+      @survey.destroy
+      flash[:notice] = "Successfully destroyed survey."
+    else
+      flash[:error] = "You don't have permission to destroy this survey."
+    end
     redirect_to surveys_url
   end
 end
