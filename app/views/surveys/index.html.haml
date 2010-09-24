@@ -8,6 +8,8 @@
     %th Publication Date
     %th End Date
     %th Public Identifier
+    %th Editors
+    %th Owner
   - for survey in @surveys
     %tr
       %td= survey.name
@@ -16,6 +18,8 @@
       %td= survey.pub_date
       %td= survey.end_date
       %td= survey.pub_id
+      %td= survey.editors.map { |a| a.full_name }.join(", ")
+      %td= survey.owner.full_name
       %td= link_to "Show", survey
       %td= link_to "Edit", edit_survey_path(survey)
       %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete
