@@ -56,4 +56,11 @@ class SurveysController < ApplicationController
     end
     redirect_to surveys_url
   end
+  
+  def deliver
+    @survey = Survey.find(params[:id])
+    SurveyMailer.survey_email(@survey).deliver
+    flash[:notice] = "Sent survey!"
+    redirect_to surveys_url
+  end
 end

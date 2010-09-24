@@ -3,10 +3,11 @@ class SurveyMailer < ActionMailer::Base
   
   def survey_email(survey)
     @owner = survey.owner
+    @survey = survey
     for recipient in survey.recipients
-      mail (:to => recipient.email,
-            :from => @owner.email,
-            :subject => "You've been invited to take a survey!")
+      mail(:to => recipient.email,
+           :from => @owner.email,
+           :subject => "You've been invited to take a survey!")
     end
   end
 end

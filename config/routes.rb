@@ -1,7 +1,5 @@
 SPScaffold::Application.routes.draw do
 
-  resources :recipients
-
   devise_for :users
 
   root :to => "pages#home"
@@ -9,8 +7,11 @@ SPScaffold::Application.routes.draw do
   match "help" => "pages#help"
   match "about" => "pages#about"
   match "contact" => "pages#contact"
-
-  resources :surveys, :users
+  
+  resources :users, :recipients
+  
+  resources :surveys
+  match "surveys/:id/deliver" => "surveys#deliver", :as => :deliver
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
