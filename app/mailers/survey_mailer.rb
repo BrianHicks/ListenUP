@@ -6,6 +6,6 @@ class SurveyMailer < ActionMailer::Base
     @survey = survey
     mail(:to => recipient.email,
          :from => @owner.email,
-         :subject => "You've been invited to take a survey!")
+         :subject => "You've been invited to take a survey!") unless recipient.no_email
   end
 end

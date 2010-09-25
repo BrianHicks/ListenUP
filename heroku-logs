@@ -1,0 +1,103 @@
+==> dyno-2310453.log <==
+>> Thin web server (v1.2.6 codename Crazy Delicious)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:45613, CTRL+C to stop
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+
+==> production.log <==
+
+
+Started GET "/" for 70.178.52.150 at Fri Sep 24 00:35:08 -0700 2010
+  Processing by PagesController#home as HTML
+Rendered layouts/_includes.html.haml (2.2ms)
+Rendered pages/home.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/users/sign_in" for 70.178.52.150 at Fri Sep 24 00:35:12 -0700 2010
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.haml (1.9ms)
+Rendered layouts/_includes.html.haml (1.4ms)
+Rendered devise/sessions/new.html.haml within layouts/application (18.0ms)
+Completed 200 OK in 33ms (Views: 22.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/sign_in" for 70.178.52.150 at Fri Sep 24 00:35:18 -0700 2010
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"sHfN1XjgUbuj9kdtKdv8ksiyIMdzRxRBI3K2DJwOohw=", "utf8"=>"\342\234\223", "user"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "email"=>"therealcaffeine@gmail.com"}}
+Redirected to http://growing-moon-25.heroku.com/
+Completed 302 Found in 122ms
+
+
+Started GET "/" for 70.178.52.150 at Fri Sep 24 00:35:18 -0700 2010
+  Processing by PagesController#home as HTML
+Rendered layouts/_includes.html.haml (1.3ms)
+Rendered pages/home.html.haml within layouts/application (32.8ms)
+Completed 200 OK in 34ms (Views: 4.3ms | ActiveRecord: 36.8ms)
+
+
+Started GET "/surveys/" for 70.178.52.150 at Fri Sep 24 00:35:22 -0700 2010
+  Processing by SurveysController#index as HTML
+Rendered layouts/_includes.html.haml (1.3ms)
+Rendered surveys/index.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/surveys/5" for 70.178.52.150 at Fri Sep 24 00:35:25 -0700 2010
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed   in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Survey with ID=5):
+  app/controllers/surveys_controller.rb:9:in `show'
+
+
+
+Started GET "/surveys/3" for 70.178.52.150 at Fri Sep 24 00:35:27 -0700 2010
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed   in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Survey with ID=3):
+  app/controllers/surveys_controller.rb:9:in `show'
+
+
+
+Started GET "/surveys/4" for 70.178.52.150 at Fri Sep 24 00:35:29 -0700 2010
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed   in 8ms
+
+ActiveRecord::RecordNotFound (Couldn't find Survey with ID=4):
+  app/controllers/surveys_controller.rb:9:in `show'
+
+
+
+Started GET "/surveys/1" for 70.178.52.150 at Fri Sep 24 00:36:12 -0700 2010
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered layouts/_includes.html.haml (1.6ms)
+Rendered surveys/show.html.haml within layouts/application (30.5ms)
+Completed 200 OK in 77ms (Views: 27.0ms | ActiveRecord: 56.9ms)
+
+
+Started GET "/surveys/1/deliver" for 70.178.52.150 at Fri Sep 24 00:36:14 -0700 2010
+  Processing by SurveysController#deliver as HTML
+  Parameters: {"id"=>"1"}
+Rendered survey_mailer/survey_email.html.haml (1.6ms)
+Rendered survey_mailer/survey_email.html.haml (1.5ms)
+Rendered survey_mailer/survey_email.html.haml (0.2ms)
+Rendered survey_mailer/survey_email.html.haml (0.2ms)
+
+Sent mail to 4@example.com (583ms)
+Redirected to http://growing-moon-25.heroku.com/surveys
+Completed 302 Found in 643ms
+
+
+Started GET "/surveys" for 70.178.52.150 at Fri Sep 24 00:36:15 -0700 2010
+  Processing by SurveysController#index as HTML
+Rendered layouts/_includes.html.haml (1.5ms)
+Rendered surveys/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 7.3ms)
+
