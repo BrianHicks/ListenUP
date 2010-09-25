@@ -9,4 +9,6 @@
   - f.inputs :for => :questions do |question|
     = render "question_fields", :f => question
     %p= link_to_add_fields "Add Question", f, :questions
+  - f.inputs :for => :recipients do |recipient|
+    = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"
