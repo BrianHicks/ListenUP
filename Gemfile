@@ -10,6 +10,7 @@ gem 'nifty-generators'
 gem 'haml'
 gem 'formtastic'
 gem 'devise'
+gem 'htmlentities'
 
 group :development do
   gem 'annotate'

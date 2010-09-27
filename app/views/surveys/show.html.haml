@@ -19,13 +19,21 @@
   %strong Public ID:
   = @survey.pub_id
 
-%ol
-  - for question in @survey.questions
-    %li
-      = question.content
-      %ul
-        - for answer in question.answers
-          %li= answer.content
+%p
+  %strong Questions:
+  %ol
+    - for question in @survey.questions
+      %li
+        = question.content
+        %ul
+          - for answer in question.answers
+            %li= answer.content
+%p
+  %strong Recipients:
+  %ul
+    - for recipient in @survey.recipients
+      %li #{recipient.email} (#{recipient.no_email})
+
 %p
   = link_to "Edit", edit_survey_path(@survey)
   |

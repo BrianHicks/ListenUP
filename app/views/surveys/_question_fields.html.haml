@@ -1,4 +1,5 @@
-= link_to_remove_fields "remove", f
+%h3
+  Question #{link_to_remove_fields "remove", f}
 = f.input :content, :input_html => { :rows => 3 }
 = f.input :order
 - f.inputs :for => :answers do |answer|
