@@ -16,6 +16,9 @@ Spork.prefork do
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
   Rspec.configure do |config|
+  # Reset the Machinist cache before each spec.
+  config.before(:each) { Machinist.reset_before_test }
+
     # == Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
