@@ -21,6 +21,7 @@ group :test do
   gem 'rspec', '>= 2.0.0.beta.18'
   gem 'spork', '>= 0.8.4'
   gem 'machinist', '>= 2.0.0.beta1'
+  gem 'faker'
 end
 
 # Use unicorn as the web server
