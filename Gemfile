@@ -14,6 +14,13 @@ gem 'htmlentities'
 
 group :development do
   gem 'annotate'
+  gem 'rspec-rails', '>= 2.0.0.beta.18'
+end
+
+group :test do
+  gem 'rspec', '>= 2.0.0.beta.18'
+  gem 'spork', '>= 0.8.4'
+  gem 'machinist'
 end
 
 # Use unicorn as the web server
