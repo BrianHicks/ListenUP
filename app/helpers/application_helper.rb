@@ -13,6 +13,10 @@ module ApplicationHelper
     coder = HTMLEntities.new
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
+  
+  def user_facing_question(f, question)
+    f.label question
+  end
 end
 
 

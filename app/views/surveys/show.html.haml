@@ -1,42 +1,38 @@
-- title "Survey"
+- title @survey.name
 
-%p
-  %strong Name:
-  = @survey.name
-%p
-  %strong Intro:
-  = @survey.intro
-%p
-  %strong Thank You:
-  = @survey.thank_you
-%p
-  %strong Publication Date:
-  = @survey.pub_date
-%p
-  %strong End Date:
-  = @survey.end_date
-%p
-  %strong Public ID:
-  = @survey.pub_id
+%p.intro= @survey.intro
+
+-if user_signed_in?
+  %p
+    = link_to "Edit", edit_survey_path(@survey)
+    |
+    = link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete
+    |
+    = link_to "View All", surveys_path
+  %p
+    %strong Thank You:
+    = @survey.thank_you
+  %p
+    %strong Publication Date:
+    = @survey.pub_date
+  %p
+    %strong End Date:
+    = @survey.end_date
+  %p
+    %strong Public ID:
+    = @survey.pub_id
+  %p
+    %strong Recipients:
+    %ul
+      - for recipient in @survey.recipients
+        %li #{recipient.email} (#{recipient.no_email})
+
 
 %p
   %strong Questions:
-  %ol
+  = form_for @survey do |f|
     - for question in @survey.questions
-      %li
-        = question.content
-        %ul
-          - for answer in question.answers
-            %li= answer.content
-%p
-  %strong Recipients:
-  %ul
-    - for recipient in @survey.recipients
-      %li #{recipient.email} (#{recipient.no_email})
-
-%p
-  = link_to "Edit", edit_survey_path(@survey)
-  |
-  = link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete
-  |
-  = link_to "View All", surveys_path
+      = user_facing_question(f, question)
+  /= semantic_form_for @survey, :url => "#", :html => { :method => "get" } do |f|
+  /- for question in @survey.questions
+  /= f.semantic_fields_for question
