@@ -7,6 +7,7 @@ class Question < ActiveRecord::Base
                                           :allow_destroy => true
 end
 
+
 # == Schema Information
 #
 # Table name: questions
@@ -18,5 +19,6 @@ end
 #  order         :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  kind          :string(255)
 #
 

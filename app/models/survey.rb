@@ -24,6 +24,7 @@ class Survey < ActiveRecord::Base
   
 end
 
+
 # == Schema Information
 #
 # Table name: surveys
@@ -37,5 +38,6 @@ end
 #  pub_id     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  owner_id   :integer
 #
 
