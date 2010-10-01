@@ -38,9 +38,21 @@ class SurveysController < ApplicationController
   
   def update
     @survey = Survey.find(params[:id])
+    
+    # grab two arrays. One with the requested emails, one with existing emails inside requested emails
+    emails = params[:survey][:recipients_attributes].map { |r| r[1]["email"] }
+    existing_emails = Recipient.where(:email => emails).map{ |r| r.email  }
+    
+    new_emails = emails - existing_emails
+    
+    for email in new_emails do
+      r = Recipient.create!(:email => email)
+    end
+
     if @survey.update_attributes(params[:survey])
       flash[:notice] = "Successfully updated survey."
-      redirect_to @survey
+      render :action => 'edit'
+      #redirect_to @survey
     else
       render :action => 'edit'
     end
