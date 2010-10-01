@@ -15,6 +15,7 @@ class SurveysController < ApplicationController
       question = @survey.questions.build
       3.times { question.answers.build }
     end
+    5.times { @survey.recipients.build }
   end
   
   def create
