@@ -75,6 +75,8 @@ class SurveysController < ApplicationController
     for recipient in @survey.recipients do
       SurveyMailer.survey_email(@survey, recipient).deliver
     end
+    @survey.sent_count++
+    @survey.save
     flash[:notice] = "Sent survey!"
     redirect_to surveys_url
   end
