@@ -37,3 +37,4 @@
   = semantic_form_for @survey, :url => "#", :html => { :method => "get" } do |f|
     = f.inputs :content, :for => :questions do |q|
       = user_facing_question(f, q)
+    = f.buttons
