@@ -30,9 +30,10 @@
 
 %p
   %strong Questions:
-  = form_for @survey do |f|
-    - for question in @survey.questions
-      = user_facing_question(f, question)
-  /= semantic_form_for @survey, :url => "#", :html => { :method => "get" } do |f|
-  /- for question in @survey.questions
-  /= f.semantic_fields_for question
+  
+  /= form_for @survey do |f|
+  /  - for question in @survey.questions
+  /    = user_facing_question(f, question)
+  = semantic_form_for @survey, :url => "#", :html => { :method => "get" } do |f|
+    = f.inputs :content, :for => :questions do |q|
+      = user_facing_question(f, q)
