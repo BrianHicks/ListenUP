@@ -72,12 +72,17 @@ class SurveysController < ApplicationController
   
   def deliver
     @survey = Survey.find(params[:id])
-    for recipient in @survey.recipients do
-      SurveyMailer.survey_email(@survey, recipient).deliver
+    if @survey.sent_count > 3
+      for recipient in @survey.recipients do
+        SurveyMailer.survey_email(@survey, recipient).deliver unless recipient.no_email
+      end
+      @survey.sent_count += 1
+      @survey.save
+      flash[:notice] = "Sent survey! (Sent #{@survey.sent_count} of 3 times.)"
+    else 
+      flash[:error] = "You cannot send a survey more than 3 times."
     end
-    @survey.sent_count++
-    @survey.save
-    flash[:notice] = "Sent survey!"
+    
     redirect_to surveys_url
   end
 end
