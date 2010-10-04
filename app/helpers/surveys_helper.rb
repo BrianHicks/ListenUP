@@ -14,6 +14,8 @@ module SurveysHelper
         q_with_collection(q, ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagre"])
       when "describesscale"
         q_with_collection(q, ["Describes Me", "Sort of Describes Me", "Neutral", "Does not really describe me", "Definitely Does not Describe Me"])
+      when "section_header"
+        haml_tag :h2, q.object.content
     end
   end
   
@@ -28,7 +30,8 @@ module SurveysHelper
     q.input :content,
      :label => q.object.content, 
      :collection => collection, 
-     :as => :radio
+     :as => :radio,
+     :input_html => { :class => 'scale' }
   end
   
 end
