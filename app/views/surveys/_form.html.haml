@@ -1,20 +1,20 @@
-- semantic_form_for @survey do |f|
-  - f.inputs do
+= semantic_form_for @survey do |f|
+  = f.inputs do
     = f.input :name, :label => 'Name'
     = f.input :intro, :label => 'Intro'
     = f.input :thank_you, :label => 'Thank you'
     = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
   %h2 Editors
-  - f.inputs :for => :editors do |editor|
+  = f.inputs :for => :editors do |editor|
     = render "editor_fields", :f => editor
     %p= link_to_add_fields "Add Editor", f, :editors
   %h2 Questions
-  - f.inputs :for => :questions do |question|
+  = f.inputs :for => :questions do |question|
     = render "question_fields", :f => question
     %p= link_to_add_fields "Add Question", f, :questions
   %h2 Recipients
-  - f.inputs :for => :recipients do |recipient|
+  = f.inputs :for => :recipients do |recipient|
     = render "recipient_fields", :f => recipient
     %p= link_to_add_fields "Add Recipient", f, :recipients
   %p= f.submit "Submit"

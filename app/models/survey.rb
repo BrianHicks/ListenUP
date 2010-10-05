@@ -9,7 +9,7 @@ class Survey < ActiveRecord::Base
   accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? },
                                             :allow_destroy => true
   accepts_nested_attributes_for :recipients, :reject_if => lambda { |a| a[:email].blank? }
-  accepts_nested_attributes_for :editors, :reject_if => lambda { |a| a[:email].blank? || User.find_by_email(a[:email]).nil? }
+  accepts_nested_attributes_for :editors, :reject_if => lambda { |a| true }
                                             
   def is_owner?(user)
     user == owner
