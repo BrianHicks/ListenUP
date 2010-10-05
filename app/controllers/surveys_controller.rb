@@ -49,7 +49,7 @@ class SurveysController < ApplicationController
     
     new_emails = emails - existing_emails
     
-    @debug = modify_editors(params, @survey)
+    modify_editors(params, @survey)
     for email in new_emails do
       r = Recipient.create!(:email => email)
     end
@@ -116,6 +116,5 @@ class SurveysController < ApplicationController
           user.surveys.delete(survey)
         end
       end
-      return params[:survey][:editors_attributes]["0"][:_destroy]
     end
 end
