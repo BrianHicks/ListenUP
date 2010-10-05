@@ -21,6 +21,7 @@ class SurveysController < ApplicationController
   
   def create
     @survey = Survey.new(params[:survey])
+    modify_editors(params, @survey)
     @survey.owner_id = current_user.id
     if @survey.save
       flash[:notice] = "Successfully created survey."
@@ -48,6 +49,7 @@ class SurveysController < ApplicationController
     
     new_emails = emails - existing_emails
     
+    @debug = modify_editors(params, @survey)
     for email in new_emails do
       r = Recipient.create!(:email => email)
     end
@@ -87,4 +89,31 @@ class SurveysController < ApplicationController
     
     redirect_to surveys_url
   end
+  
+  private
+  
+    def modify_editors(params, survey)
+      editors = survey.editors.map { |e| e.email }
+      users = User.all.map { |u| u.email }
+      emails = []
+      for id in params[:survey][:editors_attributes].keys do
+        emails << params[:survey][:editors_attributes][id][:email]
+      end
+      # add new users
+      for email in emails do
+        if users.include?(email) && !editors.include?(email)
+          survey.editors << User.find_by_email(email)
+        end
+      end
+      # delete old users
+      for id in params[:survey][:editors_attributes].keys do
+        if params[:survey][:editors_attributes][id][:_destroy] == "true"
+          email = params[:survey][:editors_attributes][id][:email]
+          survey.editors.delete(User.find_by_email(email))
+        end
+      end
+      #if users.include?(email) && !editors.include?(email)
+      #  survey.editors << User.find_by_email(email)
+      #end
+    end
 end
