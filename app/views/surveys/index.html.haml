@@ -13,12 +13,12 @@
       %td= survey.name
       %td= survey.end_date
       %td= survey.pub_id
-      %td= survey.sent_count
+      %td #{survey.sent_count}/3
       %td= survey.editors.map { |a| a.full_name }.join(", ")
       %td= survey.owner.full_name
       %td= link_to "Show", survey
       %td= link_to "Edit", edit_survey_path(survey)
       %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete if survey.is_owner?(current_user)
-      %td= link_to "Send", deliver_path(survey), :confirm => 'Are you sure? You can only send 3 times.'
+      %td= link_to "Send", deliver_path(survey), :confirm => 'Are you sure? You can only send 3 times.' if survey.sent_count < 3
 
 %p= link_to "New Survey", new_survey_path
