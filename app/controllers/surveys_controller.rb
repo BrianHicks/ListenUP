@@ -99,7 +99,7 @@ class SurveysController < ApplicationController
       for id in params[:survey][:editors_attributes].keys do
         emails << params[:survey][:editors_attributes][id][:email]
       end
-      # add new users
+      # add new users@
       for email in emails do
         if users.include?(email) && !editors.include?(email)
           survey.editors << User.find_by_email(email)
@@ -107,13 +107,11 @@ class SurveysController < ApplicationController
       end
       # delete old users
       for id in params[:survey][:editors_attributes].keys do
-        if params[:survey][:editors_attributes][id][:_destroy] == "true"
+        if params[:survey][:editors_attributes][id][:_destroy] == "1"
           email = params[:survey][:editors_attributes][id][:email]
           survey.editors.delete(User.find_by_email(email))
         end
       end
-      #if users.include?(email) && !editors.include?(email)
-      #  survey.editors << User.find_by_email(email)
-      #end
+      return params[:survey][:editors_attributes]["0"][:_destroy]
     end
 end
