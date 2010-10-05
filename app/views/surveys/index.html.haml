@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th End Date
+    %th Expired?
     %th Public Identifier
     %th Times Sent
     %th Editors
@@ -12,6 +13,7 @@
     %tr
       %td= survey.name
       %td= survey.end_date
+      %td= survey.expired? ? "Expired" : "Not Expired"
       %td= survey.pub_id
       %td #{survey.sent_count}/3
       %td= survey.editors.map { |a| a.full_name }.join(", ")
