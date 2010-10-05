@@ -5,7 +5,8 @@
     = f.input :thank_you, :label => 'Thank you'
     = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
-  
+  - f.inputs :for => :editors do |editor|
+    = render "editor_fields", :f => editor
   - f.inputs :for => :questions do |question|
     = render "question_fields", :f => question
     %p= link_to_add_fields "Add Question", f, :questions

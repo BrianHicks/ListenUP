@@ -16,6 +16,7 @@ class SurveysController < ApplicationController
       3.times { question.answers.build }
     end
     5.times { @survey.recipients.build }
+    @survey.editors.build
   end
   
   def create
@@ -31,6 +32,7 @@ class SurveysController < ApplicationController
   
   def edit
     @survey = Survey.find(params[:id])
+    @survey.editors.build if @survey.editors.count == 0
     if !@survey.can_be_edited_by? current_user
       flash[:error] = "You don't have permission to edit this survey."
       redirect_to surveys_url
