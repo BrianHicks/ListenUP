@@ -72,7 +72,7 @@ class SurveysController < ApplicationController
   
   def deliver
     @survey = Survey.find(params[:id])
-    if @survey.sent_count > 3
+    if @survey.sent_count < 3
       for recipient in @survey.recipients do
         SurveyMailer.survey_email(@survey, recipient).deliver unless recipient.no_email
       end
