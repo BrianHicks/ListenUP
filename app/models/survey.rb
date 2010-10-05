@@ -23,6 +23,10 @@ class Survey < ActiveRecord::Base
     User.find(owner_id)
   end
   
+  def expired?
+    Time.now > end_date
+  end
+  
 end
 
 
