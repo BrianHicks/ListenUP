@@ -9,9 +9,11 @@
   = f.inputs :for => :editors, :id => "editors" do |editor|
     = render "editor_fields", :f => editor
   %h2 Questions
-  = f.inputs :for => :questions, :id => "questions" do |question|
-    = render "question_fields", :f => question
+  #questions
+    = f.inputs :for => :questions, :class => "question" do |question|
+      = render "question_fields", :f => question
   %h2 Recipients
   = f.inputs :for => :recipients, :id => "recipients" do |recipient|
     = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"
+= javascript_include_tag "survey_edit"
