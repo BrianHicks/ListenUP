@@ -11,6 +11,7 @@ gem 'haml'
 gem 'formtastic'
 gem 'devise'
 gem 'htmlentities'
+gem 'jquery-rails'
 
 group :development do
   gem 'annotate'
