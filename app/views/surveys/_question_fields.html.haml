@@ -1,6 +1,8 @@
-= f.input :content, :input_html => { :rows => 3 }
+= f.input :content, :as => "string"
 = f.input :kind, :as => "select", :collection => {"Drop Down List" => "select", "Free-form text" => "text", "Single choice" => "radio", "Checkboxes" => "check_boxes", "Agree to Disgree Scale" => "agreescale", "Describes Me Scale" => "describesscale"}
 = f.input :order, :input_html => { :class => "order" }
-.answers
+= button_to_function "Show / Hide Answers", "toggleVisible(\"#answers_for_#{f.object.id}\")"
+.answers{ :id => "answers_for_#{f.object.id}" }
   = f.inputs :for => :answers, :class => "answer" do |answer|
     = render 'answer_fields', :f => answer
+  Add an answer.

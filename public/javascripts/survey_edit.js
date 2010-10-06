@@ -13,5 +13,11 @@ $(document).ready(function() {
     }
   });
   // make the order fields hidden
-  jQuery(".order").parent().hide()
+  $(".order").parent().hide();
+  // make the answers hidden by default
+  $(".answers").hide();
 });
+
+var toggleVisible = function(object) {
+  $(object).toggle();
+}
