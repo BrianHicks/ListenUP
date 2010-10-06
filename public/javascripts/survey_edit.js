@@ -1,7 +1,6 @@
 $(document).ready(function() {
   // make the questions sortable
   $("#questions").sortable({
-    containment: jQuery("#questions"),
     axis: "y",
     update: function() {
       // update orders by iterating through order fields
