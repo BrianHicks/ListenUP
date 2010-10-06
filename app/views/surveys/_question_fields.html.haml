@@ -1,8 +1,6 @@
 %h3
-  Question #{link_to_remove_fields "remove", f}
 = f.input :content, :input_html => { :rows => 3 }
 = f.input :order
 = f.input :kind, :as => "select", :collection => {"Drop Down List" => "select", "Free-form text" => "text", "Single choice" => "radio", "Checkboxes" => "check_boxes", "Agree to Disgree Scale" => "agreescale", "Describes Me Scale" => "describesscale"}
 = f.inputs :for => :answers do |answer|
   = render 'answer_fields', :f => answer
-= link_to_add_fields "Add Answer", f, :answers
