@@ -6,12 +6,12 @@
     = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
   %h2 Editors
-  = f.inputs :for => :editors do |editor|
+  = f.inputs :for => :editors, :id => "editors" do |editor|
     = render "editor_fields", :f => editor
   %h2 Questions
-  = f.inputs :for => :questions do |question|
+  = f.inputs :for => :questions, :id => "questions" do |question|
     = render "question_fields", :f => question
   %h2 Recipients
-  = f.inputs :for => :recipients do |recipient|
+  = f.inputs :for => :recipients, :id => "recipients" do |recipient|
     = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"

@@ -1,6 +1,5 @@
-%h3
-= f.input :content, :input_html => { :rows => 3 }
+= f.input :content, :input_html => { :rows => 3, :class => "question" }
 = f.input :order
 = f.input :kind, :as => "select", :collection => {"Drop Down List" => "select", "Free-form text" => "text", "Single choice" => "radio", "Checkboxes" => "check_boxes", "Agree to Disgree Scale" => "agreescale", "Describes Me Scale" => "describesscale"}
-= f.inputs :for => :answers do |answer|
+= f.inputs :for => :answers, :class => "answers" do |answer|
   = render 'answer_fields', :f => answer
