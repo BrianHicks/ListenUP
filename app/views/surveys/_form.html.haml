@@ -13,7 +13,7 @@
     = f.inputs :for => :questions, :class => "question" do |question|
       = render "question_fields", :f => question
   %h2 Recipients
-  = f.inputs :for => :recipients, :id => "recipients" do |recipient|
+  = f.inputs :for => :recipients, :class => "recipient" do |recipient|
     = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"
 = javascript_include_tag "survey_edit"

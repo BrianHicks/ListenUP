@@ -24,3 +24,11 @@ form.formtastic fieldset > ol fieldset {
   background-color: #EEE;
   overflow: hidden;
 }
+
+.error {
+  opacity: .5;
+}
+
+.error a {
+  color: #F80;
+}
