@@ -6,7 +6,7 @@
     = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
   %h2 Editors
-  = f.inputs :for => :editors, :id => "editors" do |editor|
+  = f.inputs :for => :editors, :class => "editor" do |editor|
     = render "editor_fields", :f => editor
   %h2 Questions
   #questions

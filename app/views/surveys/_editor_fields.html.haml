@@ -1,1 +1,3 @@
-= f.input :email, :label => "Editor email", :required => false, :input_html => { :class => "editor" }
+- label = "Editor email #{link_to_function("[x]", "remove_field($(this).parents(\".editor\"))")}".html_safe
+= f.input :email, :label => label, :required => false
+= destroy_field f
