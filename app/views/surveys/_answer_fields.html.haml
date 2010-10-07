@@ -1,2 +1,3 @@
-= f.input :content, :label => "Answer"
+- label = "Answer #{link_to_function("[x]", "remove_field($(this).parents(\".answer\"))")}".html_safe
+= f.input :content, :label => label
 = destroy_field(f)
