@@ -17,6 +17,16 @@ $(document).ready(function() {
   $(".answers").hide();
 });
 
-var toggleVisible = function(object) {
-  $(object).toggle();
+var toggleVisible = function(selector) {
+  $(selector).toggle();
+}
+
+var remove_field = function(selector) {
+  if ($(".destroy", selector).val() == 1) {
+    $(selector).animate({ backgroundColor: "#EEE", "color": "#000"}, 500)
+    $(".destroy", selector).val("false");
+  } else {
+    $(selector).animate({ backgroundColor: "#A00", "color": "#FFF"}, 500)
+    $(".destroy", selector).val("1");
+  }
 }

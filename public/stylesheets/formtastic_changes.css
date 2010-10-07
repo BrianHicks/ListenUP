@@ -22,4 +22,5 @@ form.formtastic fieldset > ol fieldset {
   padding: 5px;
   border: 1px solid #CCC;
   background-color: #EEE;
+  overflow: hidden;
 }
