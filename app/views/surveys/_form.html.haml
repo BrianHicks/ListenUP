@@ -5,15 +5,17 @@
     = f.input :thank_you, :label => 'Thank you'
     = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
-  %h2 Editors
-  = f.inputs :for => :editors, :class => "editor" do |editor|
-    = render "editor_fields", :f => editor
-  %h2 Questions
+  %h2= "Editors #{link_to_add_fields("Add an editor", f, :editors)}".html_safe
+  #editors
+    = f.inputs :for => :editors, :class => "editor" do |editor|
+      = render "editor_fields", :f => editor
+  %h2= "Questions #{link_to_add_fields("Add a question", f, :questions)}".html_safe
   #questions
     = f.inputs :for => :questions, :class => "question" do |question|
       = render "question_fields", :f => question
-  %h2 Recipients
-  = f.inputs :for => :recipients, :class => "recipient" do |recipient|
-    = render "recipient_fields", :f => recipient
+  %h2 Recipients= "Recipients #{link_to_add_fields("Add a question", f, :recipients)}".html_safe
+  #recipients
+    = f.inputs :for => :recipients, :class => "recipient" do |recipient|
+      = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"
 = javascript_include_tag "survey_edit"

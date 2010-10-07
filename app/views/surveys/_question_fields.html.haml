@@ -7,4 +7,4 @@
 .answers{ :id => "answers_for_#{f.object.id}" }
   = f.inputs :for => :answers, :class => "answer" do |answer|
     = render 'answer_fields', :f => answer
-  Add an answer.
+= link_to_add_fields("Add a question", f, :answers)
