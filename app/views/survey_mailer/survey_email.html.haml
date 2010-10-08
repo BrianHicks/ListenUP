@@ -9,4 +9,5 @@
       %a{:href => "http://localhost:3000/survey/" + @survey.id.to_s}= @survey.name
     %p
       And then go out and have an awesome day!
-      
+    %p
+      Don't want this email? Do you really hate me that much? Well, here's a page to control your #{link_to "preferences", "/recipients/" + @recipient.id + "/edit" + @recipient.secret }.

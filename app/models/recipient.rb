@@ -5,8 +5,8 @@ class Recipient < ActiveRecord::Base
   
   has_and_belongs_to_many :surveys
   
-  def generate_secret
-    Digest::MD5.hexdigest(email)
+  def secret
+    Digest::MD5.hexdigest(email).to_s.slice(0,8)
   end
 end
 

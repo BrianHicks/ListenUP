@@ -12,6 +12,7 @@ SPScaffold::Application.routes.draw do
   
   resources :surveys
   match "surveys/:id/deliver" => "surveys#deliver", :as => :deliver
+  match "recipients/:id/edit/:secret" => "recipients#edit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
