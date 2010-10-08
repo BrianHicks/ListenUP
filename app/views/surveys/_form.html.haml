@@ -13,7 +13,7 @@
   #questions
     = f.inputs :for => :questions, :class => "question" do |question|
       = render "question_fields", :f => question
-  %h2 Recipients= "Recipients #{link_to_add_fields("Add a question", f, :recipients)}".html_safe
+  %h2 Recipients= "Recipients #{link_to_add_fields("Add an answer", f, :recipients)}".html_safe
   #recipients
     = f.inputs :for => :recipients, :class => "recipient" do |recipient|
       = render "recipient_fields", :f => recipient

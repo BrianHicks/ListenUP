@@ -9,6 +9,7 @@
     %th Times Sent
     %th Editors
     %th Owner
+    %th Yours?
   - for survey in @surveys
     %tr
       %td= survey.name
@@ -18,6 +19,7 @@
       %td #{survey.sent_count}/3
       %td= survey.editors.map { |a| a.full_name }.join(", ")
       %td= survey.owner.full_name
+      %td= survey.is_owner?(current_user) ? "Yes" : "No"
       %td= link_to "Show", survey
       %td= link_to "Edit", edit_survey_path(survey)
       %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete if survey.is_owner?(current_user)
