@@ -28,7 +28,7 @@ class Survey < ActiveRecord::Base
   end
   
   def expired?
-    Time.now > end_date
+    Time.now >= end_date
   end
   
 end

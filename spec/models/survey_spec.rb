@@ -74,14 +74,15 @@ describe Survey do
   
   describe "basic functions" do
     describe "expired?" do
-      before :all do
-        @times = @survey.end_date
-      end
       it "should be false right now" do
         @survey.expired?.should be_false
       end
+      it "should be false 1 second before the end date" do
+        Timecop.freeze(@survey.end_date - 1.second)
+        @survey.expired?.should be_false
+      end
       it "should be true when the survey expires" do
-        Timecop.freeze(Time.local(@times.year, @times.month, @times.day, @times.hour, @times.min, @times.sec))
+        Timecop.freeze(@survey.end_date)
         @survey.expired?.should be_true
       end
     end
