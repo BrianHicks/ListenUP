@@ -25,10 +25,10 @@ form.formtastic fieldset > ol fieldset {
   overflow: hidden;
 }
 
-.error {
+.delete {
   opacity: .5;
 }
 
-.error a {
+.delete a {
   color: #F80;
 }

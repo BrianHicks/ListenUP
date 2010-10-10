@@ -24,12 +24,12 @@ var toggleVisible = function(selector) {
 
 var remove_field = function(selector) {
   if ($(".destroy", selector).val() == 1) {
-    $(selector).removeClass("error", 500);
+    $(selector).removeClass("delete", 500);
     //$(selector).animate({ backgroundColor: "#EEE", "color": "#000"}, 500)
     $(".destroy", selector).val("false");
     $("input, select", selector).attr("disabled", "");
   } else {
-    $(selector).addClass("error", 500);
+    $(selector).addClass("delete", 500);
     //$(selector).animate({ backgroundColor: "#A00", "color": "#FFF"}, 500)
     $(".destroy", selector).val("1");
     $("input, select", selector).attr("disabled", "true");
