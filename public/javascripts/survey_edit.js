@@ -1,19 +1,21 @@
 $(document).ready(function() {
   // make the questions sortable
   $("#questions").sortable({
-    axis: "y"
+    axis: "y", 
+    update: function() { updateInfo(); }
   });
+  updateInfo();
 });
 
 var updateInfo = function() {
-  // update orders by iterating through order fields
+  // update positions by iterating through position fields
   var i = 0;
-  $(".order").each(function() {
+  $(".position").each(function() {
     $(this).val(i);
     i++;
   });
-  // make the order fields hidden
-  $(".order").parent().hide();
+  // make the position fields hidden
+  $(".position").parent().hide();
   // make the answers hidden by default
   $(".answers").hide();
 }
