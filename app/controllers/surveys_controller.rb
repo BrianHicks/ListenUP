@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
 
   def index
-    @surveys = current_user.surveys
+    @surveys = current_user.is_admin? ? Survey.all : current_user.surveys
   end
   
   def show
