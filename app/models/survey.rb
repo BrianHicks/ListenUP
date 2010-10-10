@@ -16,7 +16,11 @@ class Survey < ActiveRecord::Base
   end
   
   def can_be_edited_by?(user)
-    editors.include?(user) || is_owner(user) || user.is_admin?
+    editors.include?(user) || is_owner?(user) || user.is_admin?
+  end
+  
+  def can_be_deleted_by?(user)
+    is_owner?(user) || user.is_admin?
   end
   
   def owner
