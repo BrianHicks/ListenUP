@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Survey do
-  before :each do
+  before :all do
     @user = User.make!
     @editor = User.make!
     @owner = User.make!

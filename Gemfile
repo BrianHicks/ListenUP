@@ -23,6 +23,7 @@ group :test do
   gem 'spork', '>= 0.8.4'
   gem 'machinist', '>= 2.0.0.beta1'
   gem 'faker'
+  gem 'timecop'
 end
 
 # Use unicorn as the web server
