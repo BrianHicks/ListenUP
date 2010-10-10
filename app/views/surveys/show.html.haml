@@ -23,9 +23,7 @@
     = @survey.pub_id
   %p
     %strong Recipients:
-    %ul
-      - for recipient in @survey.recipients
-        %li= recipient.email
+    = @survey.recipients.map { |r| r.email }.join(", ")
 
 %p
   - unless @survey.expired?
