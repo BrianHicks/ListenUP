@@ -57,8 +57,7 @@ class SurveysController < ApplicationController
 
     if @survey.update_attributes(params[:survey])
       flash[:notice] = "Successfully updated survey."
-      render :action => 'edit'
-      #redirect_to @survey
+      redirect_to @survey
     else
       render :action => 'edit'
     end

@@ -5,6 +5,8 @@ class Question < ActiveRecord::Base
   
   accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:content].blank? },
                                           :allow_destroy => true
+                                          
+  default_scope :order => "questions.position DESC"
 end
 
 
