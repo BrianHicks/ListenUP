@@ -10,6 +10,12 @@ class Survey < ActiveRecord::Base
                                             :allow_destroy => true
   accepts_nested_attributes_for :recipients, :reject_if => lambda { |a| a[:email].blank? }
   accepts_nested_attributes_for :editors, :reject_if => lambda { |a| true }
+         
+  validates :name, :presence => true
+  validates :intro, :presence => true
+  validates :thank_you, :presence => true
+  validates :end_date, :presence => true
+  validates :owner_id, :presence => true
                                             
   def is_owner?(user)
     user == owner
