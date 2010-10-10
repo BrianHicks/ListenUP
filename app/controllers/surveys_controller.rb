@@ -21,9 +21,10 @@ class SurveysController < ApplicationController
   
   def create
     @survey = Survey.new(params[:survey])
-    modify_editors(params, @survey)
+    modify_editors(params, @survey) unless params[:survey][:editors_attributes].nil?
     @survey.owner_id = current_user.id
     if @survey.save
+      current_user.surveys << @survey
       flash[:notice] = "Successfully created survey."
       redirect_to @survey
     else
