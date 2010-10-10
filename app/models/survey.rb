@@ -40,6 +40,7 @@ class Survey < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: surveys
@@ -54,5 +55,6 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  owner_id   :integer
+#  sent_count :integer         default(0)
 #
 

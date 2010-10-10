@@ -10,6 +10,7 @@ class Question < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: questions
@@ -18,7 +19,7 @@ end
 #  survey_id     :integer
 #  content       :text
 #  response_type :text
-#  order         :integer
+#  position      :integer
 #  created_at    :datetime
 #  updated_at    :datetime
 #  kind          :string(255)
