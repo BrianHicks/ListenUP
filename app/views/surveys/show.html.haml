@@ -25,7 +25,7 @@
     %strong Recipients:
     %ul
       - for recipient in @survey.recipients
-        %li #{recipient.email} (#{recipient.no_email})
+        %li= recipient.email
 
 %p
   - unless @survey.expired?
