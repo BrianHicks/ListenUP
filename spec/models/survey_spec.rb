@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Survey do
-  before :all do
+  before :all  do
     @user = User.make!
     @editor = User.make!
     @owner = User.make!
@@ -69,6 +69,21 @@ describe Survey do
     end
     it "should not return the editor for owner" do
       @survey.owner.should_not eql @user
+    end
+  end
+  
+  describe "basic functions" do
+    describe "expired?" do
+      before :all do
+        @times = @survey.end_date
+      end
+      it "should be false right now" do
+        @survey.expired?.should be_false
+      end
+      it "should be true when the survey expires" do
+        Timecop.freeze(Time.local(@times.year, @times.month, @times.day, @times.hour, @times.min, @times.sec))
+        @survey.expired?.should be_true
+      end
     end
   end
 end

@@ -65,6 +65,7 @@ Survey.blueprint do
   name { Faker::Lorem.words(2) }
   intro { Faker::Lorem.words(40) }
   thank_you { Faker::Lorem.words(40) }
+  end_date { Date.today + 30 }
 end
 
 Question.blueprint do
