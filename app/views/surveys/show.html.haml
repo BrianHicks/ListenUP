@@ -13,14 +13,8 @@
     %strong Thank You:
     = @survey.thank_you
   %p
-    %strong Publication Date:
-    = @survey.pub_date
-  %p
     %strong End Date:
-    = @survey.end_date
-  %p
-    %strong Public ID:
-    = @survey.pub_id
+    #{@survey.end_date} (in #{distance_of_time_in_words(Time.now, @survey.end_date)})
   %p
     %strong Recipients:
     = @survey.recipients.map { |r| r.email }.join(", ")
