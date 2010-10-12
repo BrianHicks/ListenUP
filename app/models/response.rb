@@ -1,4 +1,9 @@
 class Response < ActiveRecord::Base
+  belongs_to :survey
+  
+  def questions
+    Survey.find(survey_id).questions
+  end
 end
 
 # == Schema Information

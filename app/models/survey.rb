@@ -2,6 +2,7 @@ class Survey < ActiveRecord::Base
   #attr_accessible :name, :intro, :thank_you, :pub_date, :end_date, :pub_id
   
   has_many :questions, :dependent => :destroy
+  has_many :responses
   
   has_and_belongs_to_many :editors, :class_name => "User"
   has_and_belongs_to_many :recipients
