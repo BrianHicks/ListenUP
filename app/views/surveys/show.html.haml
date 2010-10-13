@@ -25,6 +25,7 @@
     = semantic_form_for @survey, :url => responses_url do |f|
       = f.inputs :content, :for => :questions do |q|
         = user_facing_question(f, q)
+      = f.input :id, :as => :hidden
       = f.buttons
   - else
     Sorry, this survey has expired.
