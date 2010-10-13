@@ -52,4 +52,5 @@ edit_user_registration GET    /users/edit(.:format)                  {:action=>"
                 survey PUT    /surveys/:id(.:format)                 {:action=>"update", :controller=>"surveys"}
                 survey DELETE /surveys/:id(.:format)                 {:action=>"destroy", :controller=>"surveys"}
                deliver        /surveys/:id/deliver(.:format)         {:controller=>"surveys", :action=>"deliver"}
+         survey_thanks        /surveys/:id/thanks(.:format)          {:controller=>"surveys", :action=>"thanks"}
                               /recipients/:id/edit/:secret(.:format) {:controller=>"recipients", :action=>"edit"}
