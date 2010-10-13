@@ -12,7 +12,12 @@ class ResponsesController < ApplicationController
   end
   
   def create
-    @response = Response.new(params[:response])
+    if params[:survey]
+      modified_params = { :content => params[:survey].inspect.to_s, :survey_id => params[:survey][:id] }
+      @response = Response.new(modified_params)
+    else
+      @response = Response.new(params[:response])
+    end
     if @response.save
       flash[:notice] = "Successfully created response."
       redirect_to @response
