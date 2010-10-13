@@ -1,5 +1,11 @@
-%h1 News and Updates
-%h2 10/13/10
-%h3 Uservoice
-%p You can now submit bugs through the red feedback tab on the left. Feedback is provided through UserVoice. You can sign up for an account there or log in with your Google or Facebook account. Please let me know if you find anything wrong with the app there. It would be really helpful if you would also include steps to replicate the problem you are having in a bug report. Thank you!
-%p -Brian
+-if current_user.nil?
+  / regular home page
+  %h1 ListenUp
+  %p Welcome to ListenUp. Please sign in or sign up to view the latest news and to edit or create new surveys.  
+-else
+  / news and upates page
+  %h1 News and Updates
+  %h2 10/13/10
+  %h3 Uservoice
+  %p You can now submit bugs through the red feedback tab on the left. Feedback is provided through UserVoice. You can sign up for an account there or log in with your Google or Facebook account. Please let me know if you find anything wrong with the app there. It would be really helpful if you would also include steps to replicate the problem you are having in a bug report. Thank you!
+  %p -Brian
