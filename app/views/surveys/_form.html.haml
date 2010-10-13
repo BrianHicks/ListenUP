@@ -3,7 +3,6 @@
     = f.input :name, :label => 'Name'
     = f.input :intro, :label => 'Intro'
     = f.input :thank_you, :label => 'Thank you'
-    = f.input :pub_date, :label => 'Pub date', :as => :date
     = f.input :end_date, :label => 'End date', :as => :date
   %h2= "Editors #{link_to_add_fields("Add an editor", f, :editors)}".html_safe
   #editors

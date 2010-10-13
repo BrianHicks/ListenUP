@@ -5,7 +5,6 @@
     %th Name
     %th Ends in...
     %th Expired?
-    %th Public Identifier
     %th Times Sent
     %th Editors
     %th Yours?
@@ -14,7 +13,6 @@
       %td= survey.name
       %td= survey.expired? ? "#{time_ago_in_words(survey.end_date)} ago" : distance_of_time_in_words(Time.now, survey.end_date)
       %td= survey.expired? ? "Expired" : "Not Expired"
-      %td= survey.pub_id
       %td #{survey.sent_count}/3
       %td= survey.editors.map { |a| a.full_name }.join(", ")
       %td= survey.is_owner?(current_user) ? "Yes" : "No"

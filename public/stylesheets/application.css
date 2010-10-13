@@ -73,3 +73,12 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+th {
+  text-align: left;
+}
+
+td {
+  padding-top: 10px;
+  padding-right: 5px;
+}
