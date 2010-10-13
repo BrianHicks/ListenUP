@@ -1,0 +1,15 @@
+- title "Response"
+
+%p
+  %strong Content:
+  = @response.content
+%p
+  %strong Survey:
+  = @response.survey_id
+
+%p
+  = link_to "Edit", edit_response_path(@response)
+  |
+  = link_to "Destroy", @response, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", responses_path

@@ -1,5 +1,7 @@
 SPScaffold::Application.routes.draw do
 
+  resources :responses
+
   devise_for :users
 
   root :to => "pages#home"
@@ -8,7 +10,8 @@ SPScaffold::Application.routes.draw do
   match "about" => "pages#about"
   match "contact" => "pages#contact"
   
-  resources :users, :recipients
+  resources :users, :recipients, :responses
+  put 'responses/' => 'responses#create'
   
   resources :surveys
   match "surveys/:id/deliver" => "surveys#deliver", :as => :deliver

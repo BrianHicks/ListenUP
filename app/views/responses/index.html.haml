@@ -1,0 +1,15 @@
+- title "Responses"
+
+%table
+  %tr
+    %th Content
+    %th Survey
+  - for response in @responses
+    %tr
+      %td= response.content
+      %td= response.survey_id
+      %td= link_to 'Show', response
+      %td= link_to 'Edit', edit_response_path(response)
+      %td= link_to 'Destroy', response, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Response", new_response_path
