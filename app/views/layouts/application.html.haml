@@ -10,15 +10,15 @@
       #header
         #user_actions
           - if user_signed_in?
-            = link_to "Sign out", destroy_user_session_path
-            = link_to "View profile", user_path(current_user)
+            = link_to "Home", root_path
+            |
             = link_to "Edit profile", edit_user_registration_path
+            |
             = link_to "Your surveys", surveys_path
+            |
+            = link_to "Sign out", destroy_user_session_path
           - else
-            = link_to "Sign in", new_user_session_path
-            or
-            = link_to "sign up", new_user_registration_path
-            \.
+            #{link_to("Sign in", new_user_session_path)} or #{link_to("sign up", new_user_registration_path)}.
       #content
         - flash.each do |name, msg|
           %div{ :id => "flash_#{name}" }= msg
