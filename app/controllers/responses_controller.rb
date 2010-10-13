@@ -19,8 +19,12 @@ class ResponsesController < ApplicationController
       @response = Response.new(params[:response])
     end
     if @response.save
-      flash[:notice] = "Successfully created response."
-      redirect_to @response
+      if params[:survey]
+        redirect_to survey_thanks_url(params[:survey][:id])
+      else
+        flash[:notice] = "Successfully created response."
+        redirect_to @response
+      end
     else
       render :action => 'new'
     end
