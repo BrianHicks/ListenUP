@@ -90,6 +90,10 @@ class SurveysController < ApplicationController
     redirect_to surveys_url
   end
   
+  def thanks
+    @survey = Survey.find(params[:id])
+  end
+  
   private
   
     def modify_editors(params, survey)
