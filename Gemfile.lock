@@ -41,6 +41,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    exceptional (2.0.26)
     faker (0.3.1)
     formtastic (1.1.0)
       actionpack (>= 2.3.0)
@@ -107,6 +108,7 @@ DEPENDENCIES
   annotate
   compass (>= 0.10.6)
   devise
+  exceptional
   faker
   formtastic
   haml

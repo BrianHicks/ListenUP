@@ -13,6 +13,7 @@ gem 'formtastic'
 gem 'devise'
 gem 'htmlentities'
 gem 'jquery-rails'
+gem 'exceptional'
 
 group :development do
   gem 'annotate'
