@@ -10,4 +10,4 @@
     %p
       And then go out and have an awesome day!
     %p
-      Don't want this email? Do you really hate me that much? Well, here's a page to control your #{link_to "preferences", "/recipients/" + @recipient.id + "/edit" + @recipient.secret }.
+      Don't want this email? Do you really hate me that much? Well, here's a page to control your #{link_to "preferences", "/recipients/" + @recipient.id.to_s + "/edit/" + @recipient.secret.to_s }.
