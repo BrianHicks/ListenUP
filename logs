@@ -1,0 +1,31 @@
+==> exceptional.log <==
+# Logfile created on Tue Nov 02 22:27:33 -0700 2010 by logger.rb
+[INFO] (railtie.rb:11) Wed Nov 03 05:27:33 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
+[INFO] (init.rb:29) Wed Nov 03 05:27:33 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
+
+==> newrelic_agent.log <==
+# Logfile created on Tue Nov 02 22:27:34 -0700 2010 by logger.rb
+[11/02/10 22:27:34 -0700 railgun64.40472 (17123)] INFO : Dispatcher: thin
+[11/02/10 22:27:34 -0700 railgun64.40472 (17123)] INFO : Application: listenup
+[11/02/10 22:27:34 -0700 railgun64.40472 (17123)] INFO : New Relic RPM Agent 2.13.2 Initialized: pid = 17123
+[11/02/10 22:27:34 -0700 railgun64.40472 (17123)] INFO : Agent Log found in /disk1/home/slugs/297623_08d7a14_6160-bfaf9de6-cb64-4ef7-ba51-341de2fcadfe/mnt/log/newrelic_agent.log
+[11/02/10 22:27:44 -0700 railgun64.40472 (17123)] INFO : Resolved collector.newrelic.com to 65.74.177.213
+[11/02/10 22:27:45 -0700 railgun64.40472 (17123)] INFO : Resolved collector3.newrelic.com to 65.74.177.213
+[11/02/10 22:27:46 -0700 railgun64.40472 (17123)] INFO : Reporting performance data every 60 seconds.
+
+==> dyno-2310453.log <==
+>> Thin web server (v1.2.6 codename Crazy Delicious)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:29324, CTRL+C to stop
+WARNING: 'grid.png' was not found (or cannot be read) in /disk1/home/slugs/297623_08d7a14_6160-bfaf9de6-cb64-4ef7-ba51-341de2fcadfe/mnt/public/images
+
+==> production.log <==
+Starting the New Relic Agent.
+
+
+Started GET "/" for 70.178.158.128 at Tue Nov 02 22:27:59 -0700 2010
+
+Errno::EROFS (Read-only file system - /disk1/home/slugs/297623_08d7a14_6160-bfaf9de6-cb64-4ef7-ba51-341de2fcadfe/mnt/public/stylesheets/compiled/screen.css - Heroku has a read-only filesystem.  See http://docs.heroku.com/constraints#read-only-filesystem):
+  
+
+
