@@ -1,77 +1,115 @@
 ==> production.log <==
 
+==> exceptional.log <==
+# Logfile created on Tue Nov 02 22:38:35 -0700 2010 by logger.rb
+[INFO] (railtie.rb:11) Wed Nov 03 05:38:35 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
+[INFO] (init.rb:29) Wed Nov 03 05:38:35 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
+
+==> newrelic_agent.log <==
+# Logfile created on Tue Nov 02 22:38:35 -0700 2010 by logger.rb
+[11/02/10 22:38:35 -0700 railgun64.40545 (26102)] INFO : Dispatcher: thin
+[11/02/10 22:38:35 -0700 railgun64.40545 (26102)] INFO : Application: listenup
+[11/02/10 22:38:35 -0700 railgun64.40545 (26102)] INFO : New Relic RPM Agent 2.13.2 Initialized: pid = 26102
+[11/02/10 22:38:35 -0700 railgun64.40545 (26102)] INFO : Agent Log found in /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/log/newrelic_agent.log
+
 ==> dyno-2310453.log <==
-/disk1/home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/vendor/plugins/hassle/init.rb:2: undefined method `middleware' for ActionController::Dispatcher:Class (NoMethodError)
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/plugin.rb:81
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `instance_exec'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `run'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:50:in `run_initializers'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `each'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `run_initializers'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:134:in `initialize!'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
-	from /disk1/home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/config/environment.rb:5
+WARNING: 'grid.png' was not found (or cannot be read) in /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/public/images
+/disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `initialize': Read-only file system - /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/public/images/gradients.png - Heroku has a read-only filesystem.  See http://docs.heroku.com/constraints#read-only-filesystem (Errno::EROFS)
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `open'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `save'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:14:in `generate_sprites'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:4:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:4:in `generate_sprites'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade.rb:28:in `update_stylesheets'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/bundler/gems/hassle-a08c757bce03/lib/hassle/hassle.rb:84:in `compile'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/bundler/gems/hassle-a08c757bce03/lib/hassle/hassle.rb:5:in `initialize'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:33:in `new'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:33:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:208:in `inject'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `inject'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:162:in `build_middleware_stack'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application/finisher.rb:35
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `instance_exec'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `run'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:50:in `run_initializers'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `run_initializers'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:134:in `initialize!'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/config/environment.rb:5
 	from /usr/ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
 	from /usr/ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
 	from config.ru:3
 	from /home/heroku_rack/heroku.ru:23
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `new'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `map'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `new'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `map'
 	from /home/heroku_rack/heroku.ru:18
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
 	from /home/heroku_rack/heroku.ru:11:in `new'
 	from /home/heroku_rack/heroku.ru:11
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
 	from /home/heroku_rack/heroku.ru:1:in `new'
 	from /home/heroku_rack/heroku.ru:1
-
-==> exceptional.log <==
-# Logfile created on Tue Nov 02 22:31:07 -0700 2010 by logger.rb
-[INFO] (railtie.rb:11) Wed Nov 03 05:31:07 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
-[INFO] (init.rb:29) Wed Nov 03 05:31:07 UTC 2010 - Loading Exceptional 2.0.26 for 3.0.0
 
 ==> dyno-2310453.log (crash) <==
-/disk1/home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/vendor/plugins/hassle/init.rb:2: undefined method `middleware' for ActionController::Dispatcher:Class (NoMethodError)
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/plugin.rb:81
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `instance_exec'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `run'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:50:in `run_initializers'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `each'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `run_initializers'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:134:in `initialize!'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
-	from /disk1/home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/config/environment.rb:5
+WARNING: 'grid.png' was not found (or cannot be read) in /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/public/images
+/disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `initialize': Read-only file system - /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/public/images/gradients.png - Heroku has a read-only filesystem.  See http://docs.heroku.com/constraints#read-only-filesystem (Errno::EROFS)
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `open'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/chunky_png-0.11.0/lib/chunky_png/canvas/png_encoding.rb:41:in `save'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:14:in `generate_sprites'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:4:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade/lemonade.rb:4:in `generate_sprites'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/lemonade-0.3.4/lib/lemonade.rb:28:in `update_stylesheets'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/bundler/gems/hassle-a08c757bce03/lib/hassle/hassle.rb:84:in `compile'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/bundler/gems/hassle-a08c757bce03/lib/hassle/hassle.rb:5:in `initialize'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:33:in `new'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:33:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:208:in `inject'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `inject'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/actionpack-3.0.0/lib/action_dispatch/middleware/stack.rb:79:in `build'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:162:in `build_middleware_stack'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application/finisher.rb:35
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `instance_exec'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:25:in `run'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:50:in `run_initializers'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `each'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/initializable.rb:49:in `run_initializers'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:134:in `initialize!'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `send'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+	from /disk1/home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/config/environment.rb:5
 	from /usr/ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
 	from /usr/ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
 	from config.ru:3
 	from /home/heroku_rack/heroku.ru:23
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `new'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `map'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `new'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:63:in `map'
 	from /home/heroku_rack/heroku.ru:18
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
 	from /home/heroku_rack/heroku.ru:11:in `new'
 	from /home/heroku_rack/heroku.ru:11
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
-	from /home/slugs/297623_4fd7121_6160-baa367ec-38e8-4bc2-9d93-01ec943b2cb9/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `instance_eval'
+	from /home/slugs/297623_63629f3_6160-16f1709a-1e51-4865-bc5e-73fd65c64f17/mnt/.bundle/gems/ruby/1.8/gems/rack-1.2.1/lib/rack/builder.rb:46:in `initialize'
 	from /home/heroku_rack/heroku.ru:1:in `new'
 	from /home/heroku_rack/heroku.ru:1
 
------> An error happened during the initialization of your app.
+-----> Your application is requiring a file that it can't find.
 
-       This may be due to a typo, wrong number of arguments, or calling a
-       function that doesn't exist.
-
-       Make sure the app is working locally in production mode, by running it
-       with RAILS_ENV (for Rails apps) or RACK_ENV (for Sinatra or other rack
-       apps) set to production. e.g. RAILS_ENV=production script/server.
+       Most often this is due to missing gems, or it could be that you failed
+       to commit the file to your repo.  See http://docs.heroku.com/gems for
+       more information on managing gems.
 
        Examine the backtrace above this message to debug.
