@@ -2,7 +2,7 @@
 # Require any additional compass plugins here.
 project_type = :rails
 project_path = Compass::AppIntegration::Rails.root
-require 'lemonade'
+require 'lemonade' if Rails.env.development?
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "public/stylesheets/compiled"
