@@ -15,6 +15,7 @@ gem 'devise'
 gem 'htmlentities'
 gem 'jquery-rails'
 gem 'exceptional'
+gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
 
 group :development do
   gem 'annotate'
