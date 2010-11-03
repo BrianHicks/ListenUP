@@ -852,7 +852,7 @@ body .append-bottom {
 }
 /* line 8, ../../../../../../.rvm/gems/ruby-1.9.2-p0@sp/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body .showgrid {
-  background: url('/images/grid.png');
+  background: url('/images/grid.png?1288762971');
 }
 /* line 4, ../../../../../../.rvm/gems/ruby-1.9.2-p0@sp/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .error {
@@ -1030,7 +1030,7 @@ body .alt {
 
 /* line 32, ../../../app/stylesheets/screen.sass */
 #header #menu {
-  background: url('/images/gradients.png?1288761845') repeat-x;
+  background: url("/images/gradients/header_menu.png") repeat-x;
   display: inline;
   float: left;
   margin-right: 0;
@@ -1055,43 +1055,43 @@ body .alt {
 }
 /* line 44, ../../../app/stylesheets/screen.sass */
 #header #menu #home_button a {
-  background: url('/images/menu_links.png?1288761845');
+  background: url("/images/menu_links/home_link.png");
   width: 37px;
   height: 14px;
 }
 /* line 48, ../../../app/stylesheets/screen.sass */
 #header #menu #help_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -14px;
+  background: url("/images/menu_links/help_link.png");
   width: 33px;
   height: 18px;
 }
 /* line 52, ../../../app/stylesheets/screen.sass */
 #header #menu #my_surveys_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -32px;
+  background: url("/images/menu_links/my_surveys_link.png");
   width: 73px;
   height: 18px;
 }
 /* line 56, ../../../app/stylesheets/screen.sass */
 #header #menu #my_profile_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -50px;
+  background: url("/images/menu_links/my_profile_link.png");
   width: 66px;
   height: 17px;
 }
 /* line 60, ../../../app/stylesheets/screen.sass */
 #header #menu #sign_out_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -67px;
+  background: url("/images/menu_links/sign_out_link.png");
   width: 58px;
   height: 17px;
 }
 /* line 64, ../../../app/stylesheets/screen.sass */
 #header #menu #sign_in_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -84px;
+  background: url("/images/menu_links/sign_in_link.png");
   width: 49px;
   height: 18px;
 }
 /* line 68, ../../../app/stylesheets/screen.sass */
 #header #menu #sign_up_button a {
-  background: url('/images/menu_links.png?1288761845') 0 -102px;
+  background: url("/images/menu_links/sign_up_link.png");
   width: 54px;
   height: 17px;
 }
@@ -1130,19 +1130,19 @@ body .alt {
 }
 /* line 88, ../../../app/stylesheets/screen.sass */
 #footer p#about_and_credits_header {
-  background: url('/images/footer_titles.png?1288761845');
+  background: url("/images/footer_titles/about_and_credits.png");
   width: 123px;
   height: 19px;
 }
 /* line 92, ../../../app/stylesheets/screen.sass */
 #footer p#help_topics_header {
-  background: url('/images/footer_titles.png?1288761845') 0 -19px;
+  background: url("/images/footer_titles/help_topics.png");
   width: 89px;
   height: 21px;
 }
 /* line 96, ../../../app/stylesheets/screen.sass */
 #footer p#source_code_header {
-  background: url('/images/footer_titles.png?1288761845') 0 -40px;
+  background: url("/images/footer_titles/source_code.png");
   width: 96px;
   height: 16px;
 }
