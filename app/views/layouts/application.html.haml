@@ -8,23 +8,52 @@
   %body
     #container
       #header
-        #user_actions
-          - if user_signed_in?
-            = link_to "Home", root_path
-            |
-            = link_to "Edit profile", edit_user_registration_path
-            |
-            = link_to "Your surveys", surveys_path
-            |
-            = link_to "Sign out", destroy_user_session_path
-          - else
-            #{link_to("Sign in", new_user_session_path)} or #{link_to("sign up", new_user_registration_path)}.
-      #content
         - flash.each do |name, msg|
           %div{ :id => "flash_#{name}" }= msg
-        %h1= yield(:title) if show_title?
+        %ul#menu
+          - if user_signed_in?
+            %li#sign_out_button.button= link_to "<span>Sign out</span>".html_safe, destroy_user_session_path
+            %li#my_profile_button.button= link_to "<span>My profile</span>".html_safe, edit_user_registration_path
+            %li#my_surveys_button.button= link_to "<span>My Surveys</span>".html_safe, surveys_path            
+          - else
+            %li#sign_up_button.button= link_to "<span>Sign Up</span>".html_safe, new_user_registration_path
+            %li#sign_in_button.button= link_to "<span>Sign In</span>".html_safe, new_user_session_path
+          %li#help_button.button= link_to "<span>Help</span>".html_safe, help_path
+          %li#home_button.button= link_to "<span>Home</span>".html_safe, root_path
+      #content
         = yield
       #footer
-        = debug(params) if Rails.env.development?
-        = @debug unless @debug.nil?
-      = render "layouts/uservoice"
+        .footer_column
+          %p#about_and_credits_header.footer_header
+            %span About and Credits
+          %p
+            ListenUp is an awesome application by Brian Hicks, 
+            designed for students from the Psychology Department at 
+            John Brown University to administer surveys to their 
+            peers. It uses Ruby on Rails hosted at Heroku. The title
+            font is Lobster by ______ ______.
+        .footer_column
+          %p#help_topics_header.footer_header
+            %span Help Topics
+          %p
+            %ul#help_topics
+              %li Creating a new survey
+              %li Editing an existing survey
+              %li Sending out surveys
+              %li Rate limit on sending of surveys
+              %li Why the sky is blue
+              %li Why elephants are not purple
+              %li How a boy becomes a man
+              %li What the indigenous tribes of the Amazon think of this application
+              %li The amount of licks it takes to get to the center of a Tootsie Roll Pop
+        .footer_column
+          %p#source_code_header.footer_header
+            %span Source Code
+          %p 
+            The source code for this application is available for
+            review and download on Github. It's written in Ruby on
+            Rails. The design source files are available upon request.
+        .clear
+= debug(params) if Rails.env.development?
+= @debug unless @debug.nil?
+= render "layouts/uservoice"

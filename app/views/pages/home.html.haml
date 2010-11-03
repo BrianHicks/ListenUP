@@ -1,7 +1,39 @@
--if current_user.nil?
-  / regular home page
-  %h1 ListenUp
-  %p Welcome to ListenUp. Please sign in or sign up to view the latest news and to edit or create new surveys.  
--else
-  / news and upates page
-  = @news.html_safe
+/-if current_user.nil?
+#logo
+  = image_tag "logo_new.png", :alt => "Listen Up", :title => "Listen Up"
+#pictures
+  %img{:src => "#", :alt => "Image 1", :title => "Image 1"}
+  %img{:src => "#", :alt => "Image 2", :title => "Image 2"}
+  %img{:src => "#", :alt => "Image 3", :title => "Image 3r"}
+#slogan
+  = image_tag "motto.png", :alt => "ListenUp: A New Way of Doing Surveys", :title => "ListenUp: A New Way of Doing Surveys"
+#text
+  .body_column
+    %h2 Step 1
+    %p 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis sapien ligula. Fusce tristique 
+      tristique orci, ac adipiscing augue dignissim eget.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis sapien ligula. Fusce tristique 
+      tristique orci, ac adipiscing augue dignissim eget.
+  .body_column
+    %h2 Step 2
+    %p 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis sapien ligula. Fusce tristique 
+      tristique orci, ac adipiscing augue dignissim eget.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis sapien ligula. Fusce tristique 
+      tristique orci, ac adipiscing augue dignissim eget.
+  .body_column
+    %h2 Step 3
+    %p 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis sapien ligula. Fusce tristique 
+      tristique orci, ac adipiscing augue dignissim eget.
+    %p.sign_up= link_to "<span>Sign up. No spam, we promise!</span>".html_safe, new_user_registration_path             
+  .clear
+/-else
+/  / news and upates page
+/  = @news.html_safe

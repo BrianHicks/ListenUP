@@ -1,0 +1,159 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+$blueprint-grid-columns : 21
+$olive: #9B9E00
+$off-white: #F5F5F5
+$footer-bg: #C0B765
+$footer-text: #333333
+
+@import "compass/reset"
+@import "blueprint"
+@import "blueprint/fancy-type"
+
+body
+  background-color: $olive
+  +blueprint
+  +fancy-type
+
+#container
+  +container
+  margin-left: 175px
+  margin-top: 155px
+  
+#logo
+  position: absolute
+  left: 0px
+  top: 0px
+
+#header
+  #menu
+    background: sprite-image("gradients/header_menu.png") repeat-x
+    +column(21, last)
+    margin-bottom: 0
+    padding-left: 0
+    list-style: none
+    a
+      display: block
+      margin: 5px
+      float: right
+    a span
+      display: none
+    #home_button a
+      background: sprite-image("menu_links/home_link.png")
+      width: 37px
+      height: 14px
+    #help_button a
+      background: sprite-image("menu_links/help_link.png")
+      width: 33px
+      height: 18px
+    #my_surveys_button a
+      background: sprite-image("menu_links/my_surveys_link.png")
+      width: 73px
+      height: 18px
+    #my_profile_button a
+      background: sprite-image("menu_links/my_profile_link.png")
+      width: 66px
+      height: 17px
+    #sign_out_button a
+      background: sprite-image("menu_links/sign_out_link.png")
+      width: 58px
+      height: 17px
+    #sign_in_button a
+      background: sprite-image("menu_links/sign_in_link.png")
+      width: 49px
+      height: 18px
+    #sign_up_button a
+      background: sprite-image("menu_links/sign_up_link.png")
+      width: 54px
+      height: 17px
+
+#content
+  background-color: $off-white
+  clear: both
+  margin-bottom: 0
+  
+#footer
+  clear: both
+  background-color: $footer-bg
+  color: $footer-text
+  .footer_column
+    +column(7)
+  .footer_column:nth-child(3)
+    +last
+  p.footer_header
+    margin-bottom: 30px
+  p#about_and_credits_header
+    background: sprite-image("footer_titles/about_and_credits.png")
+    width: 123px
+    height: 19px
+  p#help_topics_header
+    background: sprite-image("footer_titles/help_topics.png")
+    width: 89px
+    height: 21px
+  p#source_code_header
+    background: sprite-image("footer_titles/source_code.png")
+    width: 96px
+    height: 16px
+  p span
+    display: none
+  ul#help_topics
+    margin: 0
+    padding: 0
+  ul#help_topics li
+    list-style-type: none
+    display: inline
+    margin: 0
+  ul#help_topics li:after
+    content: "|"
+    margin-left: .1em
+.clear
+  clear: both
+  display: block
+  width: 0
+  height: 0
+  line-height: 0
+  
+/* specific to home page */
+
+#content
+  #pictures
+    img
+      width: 270px
+      height: 270px
+      display: block
+      background-color: #CCC
+      float: left
+      margin-right: 10px
+      margin-top: 10px
+    img:last-child
+      margin-right: 0
+  #slogan
+    margin-top: 5px
+    width: 100%
+    float: left
+    img
+      margin-left: 5px
+  #text
+    .body_column
+      +column(7)
+      h2
+        font-size: 1.2em
+        margin-bottom: 0.2em
+        font-weight: bold
+      .sign_up 
+        width: 100%
+        padding-top: 5px
+        a
+          background: url("/images/sign_up_button.png")
+          width: 202px
+          height: 95px
+          display: block
+          margin-left: auto
+          margin-right: auto
+          span
+            display: none
+    .body_column:nth-child(3)
+      +last

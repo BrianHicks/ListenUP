@@ -1,0 +1,4 @@
+Olive: 9B9E00
+White: F5F5F5
+Footer Tan: C0B765
+Footer Text: 333333
