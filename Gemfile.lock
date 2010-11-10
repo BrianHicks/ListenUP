@@ -40,6 +40,7 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
+    bluecloth (2.0.9)
     builder (2.1.2)
     chunky_png (0.11.0)
     compass (0.10.6)
@@ -119,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bluecloth
   compass (>= 0.10.6)
   devise
   exceptional

@@ -10,18 +10,42 @@ $footer-bg: #C0B765
 $footer-text: #333333
 
 @import "compass/reset"
-@import "blueprint"
 @import "blueprint/fancy-type"
+
+$num-columns= 9
+$default-gutter= 10px
+$default-width= 850px
+$full-cell-width= $default-width + $default-gutter
+$cell-width= $default-width / $num-columns - $default-gutter / ( $num-columns - 1 )
+
+=container($padding = 0)
+  width= $default-width
+=last
+  margin-right: 0
+=column($num = 1, $padding = 0, $last = false)
+  width= $cell-width * $num + $padding * 2
+  margin-right= $default-gutter
+  padding-left= $padding
+  padding-right= $padding
+  float: left
+  @if $last
+    +last
+=prepend($num)
+  margin-left= $full-cell-width * $num
+=append($num)
+  margin-right= $full-cell-width * $num
+  
 
 body
   background-color: $olive
-  +blueprint
   +fancy-type
 
 #container
-  +container
   margin-left: 175px
   margin-top: 155px
+  padding-left: 5px
+  padding-right: 5px
+  +container
   
 #logo
   position: absolute
@@ -31,7 +55,6 @@ body
 #header
   #menu
     background: url("/images/gradients/header_menu.png") repeat-x
-    +column(21, last)
     margin-bottom: 0
     padding-left: 0
     list-style: none
@@ -70,17 +93,27 @@ body
       width: 54px
       height: 17px
 
-#content
-  background-color: $off-white
+#content, #footer
   clear: both
   margin-bottom: 0
+  +column(9, 10px)
+  padding-top: 10px
+  padding-bottom: 10px
+  
+#debug
+  clear: both
+  margin-bottom: 0
+  +column(9, 10px)
+
+#content
+  background-color: $off-white
   
 #footer
   clear: both
   background-color: $footer-bg
   color: $footer-text
   .footer_column
-    +column(7)
+    +column(3, 0)
   .footer_column:nth-child(3)
     +last
   p.footer_header
@@ -109,6 +142,7 @@ body
   ul#help_topics li:after
     content: "|"
     margin-left: .1em
+
 .clear
   clear: both
   display: block
@@ -116,6 +150,13 @@ body
   height: 0
   line-height: 0
   
+/* forms */
+
+form
+  +column(10, 0, true)
+  p  
+    
+
 /* specific to home page */
 
 #content
@@ -126,10 +167,9 @@ body
       display: block
       background-color: #CCC
       float: left
-      margin-right: 10px
-      margin-top: 10px
+      +column(3, 0)
     img:last-child
-      margin-right: 0
+      +last
   #slogan
     margin-top: 5px
     width: 100%
@@ -138,14 +178,14 @@ body
       margin-left: 5px
   #text
     .body_column
-      +column(7)
+      +column(3, 0)
       h2
         font-size: 1.2em
         margin-bottom: 0.2em
         font-weight: bold
       .sign_up 
         width: 100%
-        padding-top: 5px
+        padding-top: 30px
         a
           background: url("/images/sign_up_button.png")
           width: 202px
