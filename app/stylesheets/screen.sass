@@ -10,7 +10,7 @@ $footer-bg: #C0B765
 $footer-text: #333333
 
 @import "compass/reset"
-@import "blueprint/fancy-type"
+@import "blueprint/typography"
 
 $num-columns= 9
 $default-gutter= 10px
@@ -27,7 +27,7 @@ $cell-width= $default-width / $num-columns - $default-gutter / ( $num-columns - 
   margin-right= $default-gutter
   padding-left= $padding
   padding-right= $padding
-  float: left
+  +float-left
   @if $last
     +last
 =prepend($num)
@@ -38,7 +38,7 @@ $cell-width= $default-width / $num-columns - $default-gutter / ( $num-columns - 
 
 body
   background-color: $olive
-  +fancy-type
+  +blueprint-typography
 
 #container
   margin-left: 175px
@@ -114,10 +114,13 @@ body
   color: $footer-text
   .footer_column
     +column(3, 0)
+    p, ul li
+      font-size: .9em
+      line-height: 1.2em
   .footer_column:nth-child(3)
     +last
   p.footer_header
-    margin-bottom: 30px
+    margin-bottom: 10px
   p#about_and_credits_header
     background: url("/images/footer_titles/about_and_credits.png")
     width: 123px
@@ -152,11 +155,6 @@ body
   
 /* forms */
 
-form
-  +column(10, 0, true)
-  p  
-    
-
 /* specific to home page */
 
 #content
@@ -179,13 +177,16 @@ form
   #text
     .body_column
       +column(3, 0)
+      p
+        font-size: 0.9em
+        line-height: 1.25em
       h2
         font-size: 1.2em
+        line-height: 1em
         margin-bottom: 0.2em
         font-weight: bold
       .sign_up 
         width: 100%
-        padding-top: 30px
         a
           background: url("/images/sign_up_button.png")
           width: 202px
