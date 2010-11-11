@@ -61,7 +61,7 @@ body
     a
       display: block
       margin: 5px
-      float: right
+      +float-right
     a span
       display: none
     #home_button a
@@ -121,18 +121,16 @@ body
     +last
   p.footer_header
     margin-bottom: 10px
-  p#about_and_credits_header
-    background: url("/images/footer_titles/about_and_credits.png")
-    width: 123px
-    height: 19px
-  p#help_topics_header
-    background: url("/images/footer_titles/help_topics.png")
-    width: 89px
     height: 21px
+  p#about_and_credits_header
+    background: url("/images/footer_titles/about_and_credits.png") no-repeat
+    width: 123px
+  p#help_topics_header
+    background: url("/images/footer_titles/help_topics.png") no-repeat
+    width: 89px
   p#source_code_header
-    background: url("/images/footer_titles/source_code.png")
+    background: url("/images/footer_titles/source_code.png") no-repeat
     width: 96px
-    height: 16px
   p span
     display: none
   ul#help_topics
@@ -164,16 +162,17 @@ body
       height: 270px
       display: block
       background-color: #CCC
-      float: left
+      +float-left
       +column(3, 0)
     img:last-child
       +last
   #slogan
-    margin-top: 5px
+    margin-top: 10px
+    margin-bottom: 10px
     width: 100%
-    float: left
+    +float-left
     img
-      margin-left: 5px
+      margin-left: 20px
   #text
     .body_column
       +column(3, 0)
