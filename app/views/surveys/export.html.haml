@@ -1,0 +1,8 @@
+%table{:border => 1}
+  %tr
+    - @data["headers"].each do |h|
+      %th= h
+  - @data["responses"].each do |r|
+    %tr
+      - r.each do |a|
+        %td= a

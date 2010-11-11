@@ -94,6 +94,36 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
   end
   
+  def export
+    @survey = Survey.find(params[:id])
+    if @survey.is_owner?(current_user)
+      headers["Content-Type"] = "application/vnd.ms-excel"
+      headers['Content-Disposition'] = 'attachment; filename="' + Time.now.to_s + ' - ' + @survey.name + '.xls"'
+      headers['Cache-Control'] = ''
+      
+      @data = {}
+      @data["headers"] = @survey.questions.map { |q| q.content }
+      @data["responses"] = []
+      @survey.responses.each do |r|
+        r_content = eval(r.content)["questions_attributes"]
+        r_answers = r_content.map { |a| a[1]["content"] }
+        r_answers.map! do |a|
+          if a.class == Array
+            a.reject { |sub| sub.empty? }.join(", ")
+          else
+            a
+          end
+        end
+        @data["responses"].push(r_answers)
+      end
+      
+      render :layout => false
+    else
+      flash[:error] = "Only the owner can download surveys."
+      redirect_to surveys_url
+    end
+  end
+  
   private
   
     def modify_editors(params, survey)
