@@ -8,19 +8,22 @@
   %body
     #container
       #header
-        - flash.each do |name, msg|
-          %div{ :id => "flash_#{name}" }= msg
-        %ul#menu
-          - if user_signed_in?
+        - if user_signed_in?
+          %ul#menu.logged_in
             %li#sign_out_button.button= link_to "<span>Sign out</span>".html_safe, destroy_user_session_path
             %li#my_profile_button.button= link_to "<span>My profile</span>".html_safe, edit_user_registration_path
             %li#my_surveys_button.button= link_to "<span>My Surveys</span>".html_safe, surveys_path            
-          - else
+            %li#help_button.button= link_to "<span>Help</span>".html_safe, help_path
+            %li#home_button.button= link_to "<span>Home</span>".html_safe, root_path
+        - else
+          %ul#menu.logged_out
             %li#sign_up_button.button= link_to "<span>Sign Up</span>".html_safe, new_user_registration_path
             %li#sign_in_button.button= link_to "<span>Sign In</span>".html_safe, new_user_session_path
-          %li#help_button.button= link_to "<span>Help</span>".html_safe, help_path
-          %li#home_button.button= link_to "<span>Home</span>".html_safe, root_path
+            %li#help_button.button= link_to "<span>Help</span>".html_safe, help_path
+            %li#home_button.button= link_to "<span>Home</span>".html_safe, root_path
       #content
+        - flash.each do |name, msg|
+          %div{ :id => "flash_#{name}" }= msg
         = yield
       #footer
         .footer_column

@@ -11,12 +11,13 @@ $footer-text: #333333
 
 @import "compass/reset"
 @import "blueprint/typography"
+@import "compass/css3/border-radius"
 
 $num-columns= 9
 $default-gutter= 10px
 $default-width= 850px
-$full-cell-width= $default-width + $default-gutter
 $cell-width= $default-width / $num-columns - $default-gutter / ( $num-columns - 1 )
+$full-cell-width= $cell-width + $default-gutter
 
 =container($padding = 0)
   width= $default-width
@@ -31,9 +32,9 @@ $cell-width= $default-width / $num-columns - $default-gutter / ( $num-columns - 
   @if $last
     +last
 =prepend($num)
-  margin-left= $full-cell-width * $num
+  margin-left= $full-cell-width * $num - $default-gutter * 2
 =append($num)
-  margin-right= $full-cell-width * $num
+  margin-right= $full-cell-width * $num - $default-gutter * 2
   
 
 body
@@ -53,11 +54,23 @@ body
   top: 0px
 
 #header
+  #menu.logged_in
+    margin-left= $cell-width * 5 + $default-gutter * 3
+    width= $cell-width * 4 - $default-gutter * 2
+    padding-right= $default-gutter * 3
+    padding-left: 0
+  #menu.logged_out
+    margin-left= $cell-width * 6 + $default-gutter * 4
+    width= $cell-width * 3 - $default-gutter * 3
+    padding-right= $default-gutter * 3
+    padding-left: 0
   #menu
     background: url("/images/gradients/header_menu.png") repeat-x
     margin-bottom: 0
-    padding-left: 0
+    +border-top-right-radius(7px)
+    +border-top-left-radius(7px)
     list-style: none
+    height: 28px
     a
       display: block
       margin: 5px
@@ -107,7 +120,20 @@ body
 
 #content
   background-color: $off-white
-  
+  #flash_error, #flash_notice, #flash_success
+    +column(9, 0, true)
+    padding: 10px
+    margin-bottom: 10px
+  #flash_error
+    color: #C00
+    background-color: #ECC
+  #flash_notice
+    color: #990
+    background-color: #EEC
+  #flash_success
+    color: #0A0
+    background-color: #CEC
+      
 #footer
   clear: both
   background-color: $footer-bg
