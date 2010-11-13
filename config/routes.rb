@@ -17,7 +17,7 @@ SPScaffold::Application.routes.draw do
   match "surveys/:id/deliver" => "surveys#deliver", :as => :deliver
   match "surveys/:id/thanks" => "surveys#thanks", :as => :survey_thanks
   match "surveys/:id/export" => "surveys#export", :as => :survey_export
-  match "recipients/:id/edit/:secret" => "recipients#edit"
+  match "recipients/:id/edit/:secret" => "recipients#edit", :as => :recipient_edit
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
