@@ -19,6 +19,7 @@
       %td= link_to "Show", survey
       %td= link_to "Edit", edit_survey_path(survey) if survey.can_be_edited_by? current_user
       %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete if survey.can_be_deleted_by? current_user
+      %td= link_to "Export (XLS)", survey_export_path(survey)
       %td= link_to "Send", deliver_path(survey), :confirm => 'Are you sure? You can only send 3 times.' if survey.sent_count < 3
 
 %p= link_to "New Survey", new_survey_path
