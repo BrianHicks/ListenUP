@@ -223,3 +223,34 @@ body
             display: none
     .body_column:nth-child(3)
       +last
+      
+/* sign up page */
+
+#user_new
+  width: 47%
+  float: left
+  +column(4, $default-gutter, false)
+  background-color: $footer-bg + #222
+  border: 1px solid $footer-bg - #333
+  color: $footer-bg - #666
+  a:link, a:active, a:visited
+    color: $footer-bg - #444
+  a:hover
+    color: $footer-bg - #888
+  input
+    width: 50%
+  h2
+    color: $footer-bg - #666
+    margin-top: $default-gutter
+    margin-bottom: $default-gutter * 2
+  
+#signup-text
+  float: right
+  +column(4, $default-gutter, true)
+  margin-top: 50px
+  ul 
+    padding-left: 20px
+    li
+      padding-left: 5px
+      margin-left: 0
+      list-style-type: disc
