@@ -1,25 +1,39 @@
 - title "Surveys"
 
-%table
-  %tr
+%table#surveys-list
+  %tr.header
     %th Name
     %th Ends in...
-    %th Expired?
     %th Times Sent
+    %th Recipients
+    %th Responses
     %th Editors
-    %th Yours?
-  - for survey in @surveys
+    %th{ :colspan => 5} Actions
+  - if @surveys.count == 0
     %tr
-      %td= survey.name
-      %td= survey.expired? ? "#{time_ago_in_words(survey.end_date)} ago" : distance_of_time_in_words(Time.now, survey.end_date)
-      %td= survey.expired? ? "Expired" : "Not Expired"
-      %td #{survey.sent_count}/3
-      %td= survey.editors.map { |a| a.full_name }.join(", ")
-      %td= survey.is_owner?(current_user) ? "Yes" : "No"
-      %td= link_to "Show", survey
-      %td= link_to "Edit", edit_survey_path(survey) if survey.can_be_edited_by? current_user
-      %td= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete if survey.can_be_deleted_by? current_user
-      %td= link_to "Export (XLS)", survey_export_path(survey)
-      %td= link_to "Send", deliver_path(survey), :confirm => 'Are you sure? You can only send 3 times.' if survey.sent_count < 3
+      %td#no_survey{ :colspan => 11, }You don't have any surveys! Click 'New Survey' below to create one!
+  -else 
+    - for survey in @surveys
+      - if survey.is_owner?(current_user)
+        %tr.survey
+          %td= survey.name
+          %td= survey.expired? ? "#{time_ago_in_words(survey.end_date)} ago" : distance_of_time_in_words(Time.now, survey.end_date)
+          %td #{survey.sent_count} of 3
+          %td= survey.recipients.count
+          %td= survey.responses.count
+          %td= survey.editors.map { |a| a.full_name }.join(", ")
+          %td= link_to "Show", survey
+          %td= link_to "Edit", edit_survey_path(survey) if survey.can_be_edited_by? current_user
+          %td= link_to "Delete", survey, :confirm => 'Are you sure? This cannot be undone.', :method => :delete if survey.can_be_deleted_by? current_user
+          %td= link_to "Export (XLS)", survey_export_path(survey)
+          %td= link_to "Send", deliver_path(survey), :confirm => 'Are you sure? You can only send 3 times.' if survey.sent_count < 3
+    - for survey in @surveys
+      - unless survey.is_owner?(current_user)
+        %tr.survey  
+          %td= survey.name
+          %td= survey.expired? ? "#{time_ago_in_words(survey.end_date)} ago" : distance_of_time_in_words(Time.now, survey.end_date)
+          %td #{survey.sent_count} of 3
+          %td= survey.editors.map { |a| a.full_name }.join(", ")
+
 
 %p= link_to "New Survey", new_survey_path

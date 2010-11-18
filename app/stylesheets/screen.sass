@@ -133,6 +133,10 @@ body
   #flash_success
     color: #0A0
     background-color: #CEC
+  a:link, a:hover, a:visited
+    color: #222
+  a:hover
+    color: #888
       
 #footer
   clear: both
@@ -259,3 +263,25 @@ body
       padding-left: 5px
       margin-left: 0
       list-style-type: disc
+      
+/* survey list page */
+
+#surveys-list
+  tbody
+    tr
+      td#no_survey
+        padding: 50px
+        text-align: center
+    tr.header
+      background-color: $footer-bg
+      color: $footer-bg - #555
+      width: 100%
+      th
+        padding-top: $default-gutter
+        padding-bottom: $default-gutter
+    tr.survey
+      background-color: $off-white - #080808
+      td
+        border-bottom: solid 1px $footer-bg
+        padding-top: $default-gutter
+        padding-bottom: $default-gutter
