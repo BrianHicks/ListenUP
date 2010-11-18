@@ -34,20 +34,15 @@
             designed for students from the Psychology Department at 
             John Brown University to administer surveys to their 
             peers. It uses Ruby on Rails hosted at Heroku. The title
-            font is Lobster by ______ ______.
+            font is Lobster by Pablo Impallari.
         .footer_column
           %p#help_topics_header.footer_header
             %span Help Topics
           %ul#help_topics
-            %li Creating a new survey
-            %li Editing an existing survey
-            %li Sending out surveys
-            %li Rate limit on sending of surveys
-            %li Why the sky is blue
-            %li Why elephants are not purple
-            %li How a boy becomes a man
-            %li What the indigenous tribes of the Amazon think of this application
-            %li The amount of licks it takes to get to the center of a Tootsie Roll Pop
+            %li= link_to "Creating a new Survey", "/help#creating"
+            %li= link_to "Editing an existing survey", "/help#editing"
+            %li= link_to "Sending out surveys", "/help#sending"
+            %li= link_to "Rate limit on sending of surveys", "/help#rate"
         .footer_column
           %p#source_code_header.footer_header
             %span Source Code
