@@ -1,2 +1,56 @@
-%h1 Pages#help
-%p Find me in app/views/pages/help.html.erb
+%h2 Help
+
+%p Topics: 
+%ul
+  %li= link_to "Creating a new survey", "#creating"
+  %li= link_to "Editing an existing survey", "#editing"
+  %li= link_to "Sending out surveys", "#sending"
+  %li= link_to "Rate limit on sending of surveys", "#rate"
+  
+%a{:name => "creating"}
+  %h2 Creating a new survey
+  
+%p 
+  To create a new survey, log in and the click the 'My Surveys' link
+  in the navigation bar in the upper right hand corner of the page.
+  Click 'New Survey' at the bottom of that page, and fill out what information
+  you want to be in your survey. After clicking the 'submit' button
+  at the bottom of the page, your survey should be listed in the 'My Surveys' page.
+  
+    
+%a{:name => "editing"}
+  %h2 Editing an existing survey
+  
+%p
+  To edit an existing survey, log in and click the 'My Surveys' link
+  in the navigation bar in the upper right hand corner of the page.
+  Click the 'edit' link in the row of the survey that you want to edit
+  and make what changes you want. After clicking the 'submit' button
+  at the bottom of the page, you should see a success or error message.
+  If you got an error message, make the changes specified in the form
+  and try again.
+  
+%a{:name => "sending"}
+  %h2 Sending out surveys
+  
+%p
+  To send a survey, log in and click the 'My Surveys' link
+  in the navigation bar in the upper right hand corner of the page.
+  Click the 'send' link in the row of the survey that you want to send.
+  The survey will be sent. Your recipients may not recieve the survey
+  immediately, but they will fairly quickly after you click the button.
+  If none of your recipients receive the survey, tell them to check
+  their spam folders as it may have gotten trapped. In addition use the
+  feedback link on the left hand side of this page to submit a support
+  request.
+  
+%a{:name => "rate"}
+  %h2 Rate limit on sending of surveys
+  
+%p
+  You can see how many times you have sent your survey in the 'Times Sent'
+  column on the 'My Surveys' page. Currently, you are allowed to send your
+  survey up to three times. The number of times you can send a survey
+  is capped to prevent spam. (We know you're not a spammer, dear user, but they're out there!)
+  If you need to send a survey more than three times for some reason, use
+  the feedback tab at the left to submit a request and your limit can be reset.
