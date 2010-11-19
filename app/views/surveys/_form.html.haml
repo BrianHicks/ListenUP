@@ -14,7 +14,7 @@
       = render "question_fields", :f => question
   %h2= "Recipients #{link_to_add_fields("Add a recipient", f, :recipients)}".html_safe
   #recipients
-    - emails = @survey.recipients.map { |r| r.email }.join(", ")
-    = f.input :recipients, :label => "Emails (comma separated)", :as => :text, :input_html => { :value => emails }
+    = f.inputs :for => :recipients, :class => "recipient" do |recipient|
+      = render "recipient_fields", :f => recipient
   %p= f.submit "Submit"
 = javascript_include_tag "survey_edit"
