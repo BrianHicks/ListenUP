@@ -22,7 +22,7 @@
           %td= survey.recipients.count
           %td= survey.responses.count
           %td= survey.editors.map { |a| a.full_name }.join(", ")
-          %td= link_to "Show", survey
+          %td= link_to "Preview", survey
           %td= link_to "Edit", edit_survey_path(survey) if survey.can_be_edited_by? current_user
           %td= link_to "Delete", survey, :confirm => 'Are you sure? This cannot be undone.', :method => :delete if survey.can_be_deleted_by? current_user
           %td= link_to "Export (XLS)", survey_export_path(survey)
