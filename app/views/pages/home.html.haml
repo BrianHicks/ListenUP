@@ -1,39 +1,32 @@
-/-if current_user.nil?
 #logo
   = image_tag "logo_new.png", :alt => "Listen Up", :title => "Listen Up"
 #pictures
-  %img{:src => "#", :alt => "Image 1", :title => "Image 1"}
-  %img{:src => "#", :alt => "Image 2", :title => "Image 2"}
-  %img{:src => "#", :alt => "Image 3", :title => "Image 3r"}
+  %img{:src => "/images/homepage-1.png"}
+  %img{:src => "/images/homepage-2.png"}
+  %img{:src => "/images/homepage-3.png"}
 #slogan
   = image_tag "motto.png", :alt => "ListenUp: A New Way of Doing Surveys", :title => "ListenUp: A New Way of Doing Surveys"
 #text
   .body_column
     %h2 Step 1
     %p 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse quis sapien ligula. Fusce tristique 
-      tristique orci, ac adipiscing augue dignissim eget.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse quis sapien ligula. Fusce tristique 
-      tristique orci, ac adipiscing augue dignissim eget.
+      Enter your questions and options with our easy-to-use survey creator.
+      Choose from easy options like single choice selections and agree to disagree
+      scales. Then, enter a name, expire date, and a thank you message and you're done.
+      No messing with HTML or complicated options that you'll never use.
   .body_column
     %h2 Step 2
     %p 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse quis sapien ligula. Fusce tristique 
-      tristique orci, ac adipiscing augue dignissim eget.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse quis sapien ligula. Fusce tristique 
-      tristique orci, ac adipiscing augue dignissim eget.
+      Copy and paste a list of emails separated by commas into one field. These are
+      your recipients. Then, just hit the send button on the survey listing page, and
+      your survey will be whisked off to all the corners of the earth on its 
+      data-gathering mission. Recipients will get a friendly email with instructions
+      on how to take your survey as well as your welcome message, so be nice!
   .body_column
     %h2 Step 3
     %p 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Suspendisse quis sapien ligula. Fusce tristique 
-      tristique orci, ac adipiscing augue dignissim eget.
+      When your survey is complete, just hit the download button and your data
+      will be delivered to you as a spreadsheet. No ads, no ridiculous 
+      requirements, just you and your surveys. Doesn't that sound nice?
     %p.sign_up= link_to "<span>Sign up. No spam, we promise!</span>".html_safe, new_user_registration_path             
   .clear
-/-else
-/  / news and upates page
-/  = @news.html_safe

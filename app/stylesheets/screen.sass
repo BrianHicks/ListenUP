@@ -172,7 +172,8 @@ body
     margin: 0
   ul#help_topics li:after
     content: "|"
-    margin-left: .1em
+    margin-left: .5em
+  ul#help_topics li:last-child:after
   a:link, a:visited, a:active
     text-decoration: underline
     color: $footer-text
@@ -193,10 +194,7 @@ body
 #content
   #pictures
     img
-      width: 270px
-      height: 270px
       display: block
-      background-color: #CCC
       +float-left
       +column(3, 0)
     img:last-child
@@ -285,3 +283,19 @@ body
         border-bottom: solid 1px $footer-bg
         padding-top: $default-gutter
         padding-bottom: $default-gutter
+        
+/* forms */
+
+fieldset.inputs
+  border-bottom: solid 1px $footer-bg
+  margin-bottom: $default-gutter * 2
+  padding-bottom: $default-gutter * 2
+  & > ol
+    list-style-type: none
+    padding-left: 0
+    margin-bottom: 0
+    margin-left: 0
+    & > li > fieldset
+      & > legend > label, & > label
+        font-size: 1.1em
+      & > ol > li
