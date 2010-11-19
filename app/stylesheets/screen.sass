@@ -299,4 +299,12 @@ fieldset.inputs
     & > li > fieldset
       & > legend > label, & > label
         font-size: 1.1em
-      & > ol > li
+      & > ol 
+        padding-left: $default-gutter * 2
+        padding-top: $default-gutter
+        & > li
+          list-style-type: none
+fieldset.buttons > ol
+  padding-left: $default-gutter
+  & > li
+    list-style-type: none
