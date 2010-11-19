@@ -11,7 +11,7 @@
     %th{ :colspan => 5} Actions
   - if @surveys.count == 0
     %tr
-      %td#no_survey{ :colspan => 11, }You don't have any surveys! Click 'New Survey' below to create one!
+      %td#no_survey{ :colspan => 11 }You don't have any surveys! Click 'New Survey' below to create one!
   -else 
     - for survey in @surveys
       - if survey.is_owner?(current_user)
