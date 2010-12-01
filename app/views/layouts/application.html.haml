@@ -1,7 +1,9 @@
 !!! html
 %html
   %head
-    %title= yield(:title) || "Untitled"
+    
+    /%title= yield(:title) || "ListenUp"
+    %title= title(@title)
     = render "layouts/includes"
     = csrf_meta_tag
     = yield(:head)
