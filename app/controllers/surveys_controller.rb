@@ -3,14 +3,17 @@ class SurveysController < ApplicationController
 
   def index
     @surveys = current_user.is_admin? ? Survey.all : current_user.surveys
+    @title = "Surveys"
   end
   
   def show
     @survey = Survey.find(params[:id])
+    @title = @survey.name
   end
   
   def new
     @survey = Survey.new
+    @title = "New Survey"
     3.times do
       question = @survey.questions.build
       3.times { question.answers.build }
@@ -34,6 +37,7 @@ class SurveysController < ApplicationController
   
   def edit
     @survey = Survey.find(params[:id])
+    @title = "Editing '#{@survey.name}'"
     @survey.editors.build if @survey.editors.count == 0
     if !@survey.can_be_edited_by? current_user
       flash[:error] = "You don't have permission to edit this survey."
@@ -92,6 +96,7 @@ class SurveysController < ApplicationController
   
   def thanks
     @survey = Survey.find(params[:id])
+    @title = @survey.name
   end
   
   def export

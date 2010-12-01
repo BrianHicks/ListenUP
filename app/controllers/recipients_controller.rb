@@ -25,6 +25,7 @@ class RecipientsController < ApplicationController
   
   def edit
     @recipient = Recipient.find(params[:id])
+    @title = "Editing #{@recipient.email}"
     if @recipient.secret != params[:secret]
       redirect_to surveys_path
       flash[:error] = "You don't have permission to edit that recipient."
